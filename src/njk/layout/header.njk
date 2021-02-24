@@ -1,0 +1,105 @@
+{% set links = [{title: "about me", id: "about"}, { title: "gallery", id: "gallery"}, { title: "pricing", id: "pricing"}, { title: "testimonials", id: "reviews"}, { title: "blog", id: "posts"}] %}
+
+<header class="vw-header">
+    {{ link }}
+    <div class="vw-container">
+        <input type="checkbox" name="menu-active" id="menu-active" hidden="hidden">
+
+        <div class="vw-header-navbar">
+
+            <label class="vw-header-burger hidden-gt-xs" for="menu-active">
+                <div class="lines">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+                </div>
+            </label>
+
+            <div class="vw-header-logo vw-header-item has-img-fit">
+                <img src="../img/vw-logo.png" alt="logo">
+                <img class="logo-invert" src="../img/vw-logo-invert.png" alt="logo">
+            </div>
+            <nav class="vw-header-item has-menu">
+                <ul class="vw-header-menu list-style">
+                    {% for link in links %}
+                        <li class="vw-header-menu-item">
+                            <a class="vw-header-menu-link vw-button vw-button-invert" href="#{{link.id}}">{{link.title}}</a>
+                        </li>
+                    {% endfor %}
+
+                    <li class="vw-header-menu-item">
+                        <a class="vw-header-menu-link vw-button" href="#">contact</a>
+                        <div class="vw-modal" id="myModal">
+                            <div class="vw-modal-content">
+                                <button type="button" class="vw-modal-close" aria-label="Close">
+                                    <span class="fa fa-times" aria-hidden="true">&#10761;</span>
+                                </button>
+                                <h2 class="text-left">
+                                    contaCt
+                                </h2>
+                                <p class="text-truncate">
+                                    <a href="tel:+425-638-3836" class="text-truncate">425-638-3836</a>
+                                </p>
+                                <p class="text-truncate">
+                                    <a href="mailto:kastlehphotography@gmail.com" class="text-truncate">kastlehphotography@gmail.com</a>
+                                </p>
+                                <p class="text-truncate">
+                                    <a href="#" class="text-truncate">www.kastlehphotography.com</a>
+                                </p>
+                                <form class="vw-form" id="contactform" method="POST" action="">
+                                    <fieldset class="vw-form-fieldset">
+                                        <legend class="vw-h3 vw-form-title">get a quote</legend>
+                                        <label class="vw-form-group" for="contactname">
+                                            <input type="text" class="vw-form-input" id="contactname" name="contactname" placeholder="Name" required="required">
+                                            <span class="error-msg">Enter your name</span>
+                                        </label>
+                                        <label class="vw-form-group" for="contactemail">
+                                            <input type="email" class="vw-form-input" id="contactemail" name="contactemail" placeholder="E-mail" required="required">
+                                            <span class="error-msg">Enter your e-mail</span>
+                                        </label>
+                                        <label class="vw-form-group" for="contactweddingdate">
+                                            <input type="text" class="vw-form-input" id="contactweddingdate" name="contactweddingdate" placeholder="Your wedding date">
+                                        </label>
+                                        <label class="vw-form-group" for="contactcomment">
+                                            <textarea type="text" class="vw-form-input" id="contactcomment" name="contactcomment" rows="5"></textarea>
+                                        </label>
+                                    </fieldset>
+                                    <div class="vw-form-group text-right">
+                                        <button class="vw-button" type="submit">send</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <div class="vw-header-item vw-social">
+                <ul class="vw-social-list list-style">
+                    <li class="vw-social-item">
+                        <a href="#" class="vw-social-link">
+                            <svg id="Bold" enable-background="new 0 0 24 24" height="512" viewbox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="vw-social-item">
+                        <a href="#" class="vw-social-link">
+                            <svg height="681pt" viewbox="-21 -81 681.33464 681" width="681pt" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m200.964844 515.292969c241.050781 0 372.871094-199.703125 372.871094-372.871094 0-5.671875-.117188-11.320313-.371094-16.9375 25.585937-18.5 47.824218-41.585937 65.371094-67.863281-23.480469 10.441406-48.753907 17.460937-75.257813 20.636718 27.054687-16.230468 47.828125-41.894531 57.625-72.488281-25.320313 15.011719-53.363281 25.917969-83.214844 31.808594-23.914062-25.472656-57.964843-41.402344-95.664062-41.402344-72.367188 0-131.058594 58.6875-131.058594 131.03125 0 10.289063 1.152344 20.289063 3.398437 29.882813-108.917968-5.480469-205.503906-57.625-270.132812-136.921875-11.25 19.363281-17.742188 41.863281-17.742188 65.871093 0 45.460938 23.136719 85.605469 58.316407 109.082032-21.5-.660156-41.695313-6.5625-59.351563-16.386719-.019531.550781-.019531 1.085937-.019531 1.671875 0 63.46875 45.171875 116.460938 105.144531 128.46875-11.015625 2.996094-22.605468 4.609375-34.558594 4.609375-8.429687 0-16.648437-.828125-24.632812-2.363281 16.683594 52.070312 65.066406 89.960937 122.425781 91.023437-44.855469 35.15625-101.359375 56.097657-162.769531 56.097657-10.5625 0-21.003906-.605469-31.2617188-1.816407 57.9999998 37.175781 126.8710938 58.871094 200.8867188 58.871094"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li class="vw-social-item">
+                        <a href="#" class="vw-social-link">
+                            <svg viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                                <path d="m437 0h-362c-41.351562 0-75 33.648438-75 75v362c0 41.351562 33.648438 75 75 75h362c41.351562 0 75-33.648438 75-75v-362c0-41.351562-33.648438-75-75-75zm-180 390c-74.441406 0-135-60.558594-135-135s60.558594-135 135-135 135 60.558594 135 135-60.558594 135-135 135zm150-240c-24.8125 0-45-20.1875-45-45s20.1875-45 45-45 45 20.1875 45 45-20.1875 45-45 45zm0 0"/>
+                                <path d="m407 90c-8.277344 0-15 6.722656-15 15s6.722656 15 15 15 15-6.722656 15-15-6.722656-15-15-15zm0 0"/>
+                                <path d="m257 150c-57.890625 0-105 47.109375-105 105s47.109375 105 105 105 105-47.109375 105-105-47.109375-105-105-105zm0 0"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

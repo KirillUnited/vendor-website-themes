@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../scss/vw-common.scss">
+        <link rel="stylesheet" href="../scss/vw-theme-one.scss">
+    </head>
+
+    <body>
+
+        <div class="vw-wrapper">
+            {% include "./layout/header.njk" %}
+            <main class="vw-content">
+                {% include "./layout/content.njk" %}
+            </main>
+            {% include "./layout/footer.njk" %}
+        </div>
+
+        <script src="../app.js"></script>
+    </body>
+
+</html>

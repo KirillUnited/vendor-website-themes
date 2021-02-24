@@ -1,0 +1,143 @@
+/*new form*/
+%pad {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.b-form {
+    background-color: white;
+    box-shadow: 0 0 5px rgba(32, 22, 0, 0.2);
+    padding: 20px 0;
+    box-sizing: border-box;
+
+    * {
+        box-sizing: inherit;
+    }
+
+    &-title {
+        @extend %pad;
+        color: #068b99;
+        font-family: "champagne";
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 20px;
+        letter-spacing: 0.075em;
+    }
+
+    &-desc {
+        @extend %pad;
+        color: black;
+        font-family: 'Roboto';
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        margin: 0 0 15px;
+    }
+
+    &-footer {
+        @extend %pad;
+        position: relative;
+        margin-top: 19px;
+        padding-top: 19px;
+
+        &::before {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, 0);
+            display: block;
+            width: 99%;
+            height: 1px;
+            background: #e8e8e8;
+        }
+    }
+
+    .messageForm & {
+
+        &-input {
+            @extend %pad;
+
+            input[type],
+            textarea {
+                @mixin input-placeholder {
+                    color: #999;
+                    font-family: 'Roboto';
+                    font-size: 16px;
+                    font-weight: 400;
+                }
+
+                width: 100%;
+                font-family: 'Roboto';
+                font-size: 16px;
+                font-weight: 400;
+                border: 1px solid rgba(0, 0, 0, 0.18);
+                padding: 12px 35px 12px 15px;
+                resize: none;
+                &:focus {
+                    border: 1px solid #0b8a89;
+                    outline: none;
+                }
+            }
+
+            .input-group {
+                position: relative;
+
+                i {
+                    position: absolute;
+                    top: 14px;
+                    right: 16px;
+                    width: 19px;
+                    height: 19px;
+                    color: #999;
+                    font-size: 17px;
+                    text-align: center;
+                }
+            }
+        }
+
+        &-label {
+            position: relative;
+            display: block;
+            color: #000101;
+            font-family: 'Roboto';
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            padding-left: 24px;
+            cursor: pointer;
+
+            input[type="checkbox"] {
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: inline-block;
+                width: 12px;
+                height: 12px;
+                color: #0b8a89;
+                text-align: center;
+                border: 1px solid #0b8a89;
+                overflow: hidden;
+                appearance: none;
+                padding: 0;
+                margin: 0;
+
+                &:checked {
+                    background: url(../img/tick.png) center no-repeat;
+                    background-size: 8px 5px;
+                }
+            }
+        }
+
+        &-btn {
+            width: 100%;
+            max-width: 220px;
+            font-size: 16px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding-top: 12px;
+            padding-bottom: 12px;
+        }
+    }
+}

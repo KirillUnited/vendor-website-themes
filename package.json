@@ -1,0 +1,36 @@
+{
+  "name": "vendor-website-themes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev-nunjucks": "npm run clean && parcel src/njk/index.njk --out-dir development -p 3000",
+    "dev": "npm run clean && parcel public/index.html --out-dir development -p 3000",
+    "build": "rimraf ./dist && parcel build public/*.html --out-dir dist --public-url ./",
+    "clean": "rimraf ./development && rimraf ./.cache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "> 0.2%",
+    "last 2 versions"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.13.1",
+    "@babel/plugin-transform-runtime": "^7.13.4",
+    "@babel/runtime-corejs2": "^7.13.4",
+    "autoprefixer": "^9.8.6",
+    "gulp": "^4.0.2",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nunjucks": "^2.2.2",
+    "postcss": "^7.0.35",
+    "postcss-modules": "^3.2.2",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "browserslist": "^4.16.3",
+    "caniuse-lite": "^1.0.30001191",
+    "nunjucks": "^3.2.3"
+  }
+}
