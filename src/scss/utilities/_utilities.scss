@@ -18,12 +18,28 @@
     @include truncate(100%);
 }
 
+.text-brand-style {
+    font-family: Champagne&Limousines;
+    font-size: Min(36px, getvw(28px));
+    font-weight: 400;
+    line-height: normal;
+}
+
+.text-brand-color {
+    color: #09abaa;
+}
+
 .text-left {
-    text-align: left!important;
+    text-align: left !important;
 }
 
 .text-right {
-    text-align: right!important;
+    text-align: right !important;
+}
+
+[hidden],
+.hidden {
+    display: none !important;
 }
 
 @media screen and (min-width: 768px) {

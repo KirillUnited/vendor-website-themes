@@ -12,6 +12,11 @@
     z-index: 99;
     background-color: hsla(0, 0%, 0%, 0.75);
 
+    &:not([hidden]),
+    &:not(.hidden) {
+        animation: fadeIn .4s linear;
+    }
+
     &-close {
         position: absolute;
         top: 0;
@@ -32,5 +37,15 @@
         -webkit-overflow-scrolling: touch;
         background-color: hsl(0, 0%, 100%);
         padding: Min(65px, getvw(60px)) Min(80px, getvw(20px));
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1;
     }
 }

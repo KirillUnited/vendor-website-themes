@@ -7,21 +7,22 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="../scss/vw-common.scss">
-        <link rel="stylesheet" href="../scss/vw-theme-one.scss">
+        
+        <link rel="stylesheet" href="../../../scss/vw-common.scss">
+        <link rel="stylesheet" href="../../../scss/vw-theme-one.scss">
     </head>
 
     <body>
 
         <div class="vw-wrapper">
-            {% include "./layout/header.njk" %}
+            {% include "layouts/header.njk" %}
             <main class="vw-content">
-                {% include "./layout/content.njk" %}
+                {% block content %}{% endblock content %}
             </main>
-            {% include "./layout/footer.njk" %}
+            {% include "layouts/footer.njk" %}
         </div>
 
-        <script src="../app.js"></script>
+        <script src="../../../app.js"></script>
     </body>
 
 </html>

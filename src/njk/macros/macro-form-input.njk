@@ -1,0 +1,6 @@
+{% macro input(name, placeholder, type, required, errorMsg) %}
+    <label class="vw-form-group" for="{{ name }}">
+        <input type="{{ type }}" class="vw-form-input" id="{{ name }}" name="{{ name }}" placeholder="{{ placeholder }}" {{ required }} autocomplete="off">
+        <span class="error-msg">{{ errorMsg }}</span>
+    </label>
+{% endmacro %}

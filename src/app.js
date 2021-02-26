@@ -1,6 +1,10 @@
 // /**
 //  * VENDOR WEBSITE COMMON SCRIPTS
 //  */
+import modal from './js/modal';
+
+modal();
+
 // $(function () {
 //     // Hide Header on scroll down and show on scroll up
 //     var scrollTimeOut = true,

@@ -1,7 +1,6 @@
 {% set links = [{title: "about me", id: "about"}, { title: "gallery", id: "gallery"}, { title: "pricing", id: "pricing"}, { title: "testimonials", id: "reviews"}, { title: "blog", id: "posts"}] %}
 
 <header class="vw-header">
-    {{ link }}
     <div class="vw-container">
         <input type="checkbox" name="menu-active" id="menu-active" hidden="hidden">
 
@@ -16,8 +15,8 @@
             </label>
 
             <div class="vw-header-logo vw-header-item has-img-fit">
-                <img src="../img/vw-logo.png" alt="logo">
-                <img class="logo-invert" src="../img/vw-logo-invert.png" alt="logo">
+                <img src="../../../img/vw-logo.png" alt="logo">
+                <img class="logo-invert" src="../../../img/vw-logo-invert.png" alt="logo">
             </div>
             <nav class="vw-header-item has-menu">
                 <ul class="vw-header-menu list-style">
@@ -28,48 +27,8 @@
                     {% endfor %}
 
                     <li class="vw-header-menu-item">
-                        <a class="vw-header-menu-link vw-button" href="#">contact</a>
-                        <div class="vw-modal" id="myModal">
-                            <div class="vw-modal-content">
-                                <button type="button" class="vw-modal-close" aria-label="Close">
-                                    <span class="fa fa-times" aria-hidden="true">&#10761;</span>
-                                </button>
-                                <h2 class="text-left">
-                                    contaCt
-                                </h2>
-                                <p class="text-truncate">
-                                    <a href="tel:+425-638-3836" class="text-truncate">425-638-3836</a>
-                                </p>
-                                <p class="text-truncate">
-                                    <a href="mailto:kastlehphotography@gmail.com" class="text-truncate">kastlehphotography@gmail.com</a>
-                                </p>
-                                <p class="text-truncate">
-                                    <a href="#" class="text-truncate">www.kastlehphotography.com</a>
-                                </p>
-                                <form class="vw-form" id="contactform" method="POST" action="">
-                                    <fieldset class="vw-form-fieldset">
-                                        <legend class="vw-h3 vw-form-title">get a quote</legend>
-                                        <label class="vw-form-group" for="contactname">
-                                            <input type="text" class="vw-form-input" id="contactname" name="contactname" placeholder="Name" required="required">
-                                            <span class="error-msg">Enter your name</span>
-                                        </label>
-                                        <label class="vw-form-group" for="contactemail">
-                                            <input type="email" class="vw-form-input" id="contactemail" name="contactemail" placeholder="E-mail" required="required">
-                                            <span class="error-msg">Enter your e-mail</span>
-                                        </label>
-                                        <label class="vw-form-group" for="contactweddingdate">
-                                            <input type="text" class="vw-form-input" id="contactweddingdate" name="contactweddingdate" placeholder="Your wedding date">
-                                        </label>
-                                        <label class="vw-form-group" for="contactcomment">
-                                            <textarea type="text" class="vw-form-input" id="contactcomment" name="contactcomment" rows="5"></textarea>
-                                        </label>
-                                    </fieldset>
-                                    <div class="vw-form-group text-right">
-                                        <button class="vw-button" type="submit">send</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+                        <button class="vw-header-menu-link vw-button" data-toggle="modal" data-target="#contactModal">contact</button>
+                        {% include "../components/_modal.njk" %}
                     </li>
                 </ul>
             </nav>

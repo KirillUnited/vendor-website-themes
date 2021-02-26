@@ -24,5 +24,10 @@
             height: getrem(2px);
             background-color: #ffffff;
         }
+
+        &.text-brand-style {
+            width: auto;
+            height: auto;
+        }
     }
 }
