@@ -19,6 +19,12 @@ h2,
     text-align: center; 
 }
 
+.vw-gallery {
+    .vw-container {        
+        transform: translateY(-30px);
+    }
+}
+
 .vw-post-card {
     &-content {
         height: getrem(394px);
@@ -161,6 +167,7 @@ h2,
     .vw-gallery {
         .vw-container {
             max-width: getvw(280px);
+            transform: translateY(-30px);
         }
     }
 

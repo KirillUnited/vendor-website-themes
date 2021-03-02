@@ -1,0 +1,31 @@
+/* VENDOR WEBSITE CUSTOM STYLING: THEME TWO */
+@import "./mixins/mixins";
+
+h1,
+.vw-h1,
+h2,
+.vw-h2,
+h3,
+.vw-h3,
+h4,
+.vw-h4 {
+    font-family: CormorantGaramond;
+    text-align: center;
+    text-transform: none;
+}
+
+.vw-button,
+a.vw-button,
+button.vw-button {
+    font-size: getrem(15px);
+    text-transform: none;
+}
+
+.vw-hero {
+    background-color: #f8f5f5;
+
+    &-img {
+        max-width: getrem(1260px);
+        padding: getrem(30px) getrem(80px);
+    }
+}

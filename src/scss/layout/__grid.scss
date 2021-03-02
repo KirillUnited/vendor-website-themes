@@ -44,7 +44,6 @@
 
 .vw-gallery {
     .vw-container {
-        transform: translateY(-30px);
         background-color: #fff;
         border-bottom: 1px solid #f2f2f2;
     }
@@ -210,9 +209,6 @@
     }
 
     .vw-gallery {
-        .vw-container {
-            transform: translateY(-10px);
-        }
 
         &-list {
             height: getvw(196px);
