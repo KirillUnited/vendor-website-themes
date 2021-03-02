@@ -17,15 +17,60 @@ h4,
 .vw-button,
 a.vw-button,
 button.vw-button {
-    font-size: getrem(15px);
+    font-size: Min(getvw(13px), getrem(15px));
     text-transform: none;
 }
 
 .vw-hero {
     background-color: #f8f5f5;
+}
 
-    &-img {
-        max-width: getrem(1260px);
-        padding: getrem(30px) getrem(80px);
+.vw-posts {
+    &-list {
+        &-item {
+            margin-bottom: Min(getvw(45px), getrem(60px));
+        }
+    }
+}
+
+.vw-post-card {
+    $gap: 60px;
+    height: auto;
+    align-items: stretch;
+    gap: getrem($gap);
+
+
+    &-content {
+        text-align: center;
+        background-color: #f8f5f5;
+    }
+
+    &-metadata {
+        justify-content: center;
+        margin-bottom: 35 / 12 * 1em;
+    }
+
+    &-desc {
+        line-height: 23 / 16 * 1em;
+        margin-bottom: 35 / 16 * 1em;
+    }
+
+    @include more-sm {
+        &-img {
+            height: getrem(469px);
+        }
+
+        &-content {
+            padding-top: getrem(90px);
+        }
+
+        &>* {
+            max-width: calc(50% - #{getrem($gap / 2)});
+        }
+    }
+
+    @include less-sm {
+        $gap: 15px;
+        gap: getvw($gap);
     }
 }

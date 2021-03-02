@@ -1,5 +1,11 @@
 $sm-container-max-media: 767px;
 
+@mixin more-sm($max: $sm-container-max-media) {
+    @media (min-width: $max + 1px) {
+        @content;
+    }
+}
+
 @mixin less-sm($max: $sm-container-max-media) {
     @media (max-width: $max) {
         @content;
