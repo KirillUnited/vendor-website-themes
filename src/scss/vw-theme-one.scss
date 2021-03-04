@@ -16,11 +16,15 @@ h1,
 .vw-h1,
 h2,
 .vw-h2 {
-    text-align: center; 
+    text-align: center;
+}
+
+.vw-modal-title {
+    text-align: left;
 }
 
 .vw-gallery {
-    .vw-container {        
+    .vw-container {
         transform: translateY(-30px);
     }
 }
@@ -61,7 +65,7 @@ h2,
 
     &-stats {
         .rate {
-            font-family: Alegreya;  
+            font-family: Alegreya;
         }
     }
 }

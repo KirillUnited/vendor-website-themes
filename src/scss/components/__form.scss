@@ -15,6 +15,7 @@
     input[type="email"],
     input[type="password"],
     input[type="text"] {
+        display: block;
         width: 100%;
         max-width: 100%;
         font-family: SourceSansPro;
@@ -75,5 +76,12 @@
 
     textarea {
         resize: vertical;
+    }
+
+    button,
+    .vw-button,
+    a.vw-button,
+    button.vw-button {
+        font-size: Max(14px / $font-size * 1em, 1em);
     }
 }

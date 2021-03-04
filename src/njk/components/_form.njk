@@ -1,15 +1,13 @@
 {% import "../macros/macro-form-input.njk" as forms %}
 <form class="vw-form" id="contactform" method="POST" action="">
     <fieldset class="vw-form-fieldset">
-        <legend class="vw-h3 vw-form-title">get a quote</legend>
+        <legend class="vw-h3 vw-form-title">Get a quote</legend>
         {{ forms.input('contactname', 'Name', 'text', 'required', 'Enter your name') }}
         {{ forms.input('contactemail', 'E-mail', 'email', 'required', 'Enter your e-mail') }}
         {{ forms.input('contactweddingdate', 'Your wedding date', 'text', required = '', errorMsg = '') }}
-        <label class="vw-form-group" for="contactcomment">
-            <textarea type="text" class="vw-form-input" id="contactcomment" name="contactcomment" rows="5"></textarea>
-        </label>
+        {{ forms.textarea('contactcomment', '', 'text') }}
+        <div class="vw-form-group text-right">
+            <button class="vw-button" type="submit">send</button>
+        </div>
     </fieldset>
-    <div class="vw-form-group text-right">
-        <button class="vw-button" type="submit">send</button>
-    </div>
 </form>

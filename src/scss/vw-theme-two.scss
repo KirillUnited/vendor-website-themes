@@ -74,3 +74,23 @@ button.vw-button {
         gap: getvw($gap);
     }
 }
+
+.vw-form {
+
+    &-input,
+    input[type="name"],
+    input[type="tel"],
+    input[type="email"],
+    input[type="password"],
+    input[type="text"] {
+        background-color: #f1f6f6;
+    }
+}
+
+.vw-modal {
+    &-content {
+        p {
+            text-align: center;
+        }
+    }
+}

@@ -4,3 +4,8 @@
         <span class="error-msg">{{ errorMsg }}</span>
     </label>
 {% endmacro %}
+{% macro textarea(name, placeholder, type) %}
+    <label class="vw-form-group" for="contactcomment">
+        <textarea type="{{ type }}" class="vw-form-input" id="{{ name }}" name="{{ name }}" rows="5"></textarea>
+    </label>
+{% endmacro %}
