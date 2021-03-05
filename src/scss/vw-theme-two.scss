@@ -94,3 +94,11 @@ button.vw-button {
         }
     }
 }
+
+#menu-active:checked {
+    ~.vw-header-navbar {
+        .lines [class^=line-] {
+            background-color: #000000;
+        }
+    }
+}

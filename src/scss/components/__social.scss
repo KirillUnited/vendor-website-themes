@@ -51,20 +51,51 @@
                 fill: #ffffff;
             }
         }
-
     }
 
     &.is-colored {
         .fb {
-            background-color: #3b5998;
+            svg {
+                fill: #3b5998;
+            }
         }
 
         .tw {
-            background-color: #00aced;
+            svg {
+                fill: #00aced;
+            }
         }
 
         .insta {
-            background-color: #c536a4;
+            svg {
+                fill: #c536a4;
+            }
+        }
+
+        &.vw-social-square {
+            .fb {
+                background-color: #3b5998;
+
+                svg {
+                    fill: #ffffff;
+                }
+            }
+
+            .tw {
+                background-color: #00aced;
+
+                svg {
+                    fill: #ffffff;
+                }
+            }
+
+            .insta {
+                background-color: #c536a4;
+
+                svg {
+                    fill: #ffffff;
+                }
+            }
         }
     }
 
