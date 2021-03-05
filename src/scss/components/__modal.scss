@@ -40,6 +40,13 @@
     }
 }
 
+html,
+body {
+    &.modal-is-active {
+        overflow: hidden!important;
+    }
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0

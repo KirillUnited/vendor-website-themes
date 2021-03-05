@@ -1,7 +1,7 @@
 ToDo:
     Header: 
-        - social icons
-        - jquery scroll to vanila js
+        ✔ jquery scroll to vanila js @done(21-03-05 13:53)
+        - [Theme2] social icons
     Hero: 
         - move image to gallery section and styling
     Modal: 
