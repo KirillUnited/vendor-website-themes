@@ -30,7 +30,6 @@ function bindEvents() {
 
             if ($modal) {
                 toggle($modal);
-                blockBodyScroll();
             }
         }, false);
     });

@@ -52,18 +52,19 @@
             }
         }
 
-        &.is-colored {
-            .fb {
-                background-color: #3b5998;
-            }
+    }
 
-            .tw {
-                background-color: #00aced;
-            }
+    &.is-colored {
+        .fb {
+            background-color: #3b5998;
+        }
 
-            .insta {
-                background-color: #c536a4;
-            }
+        .tw {
+            background-color: #00aced;
+        }
+
+        .insta {
+            background-color: #c536a4;
         }
     }
 
