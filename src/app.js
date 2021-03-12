@@ -1,3 +1,5 @@
+// /* ------ Libraries ------ */
+import datepicker from 'js-datepicker';
 // /**
 //  * VENDOR WEBSITE COMMON SCRIPTS
 //  */
@@ -10,3 +12,5 @@ window.VW.header = header;
 
 window.VW.modal();
 window.VW.header();
+
+const picker = datepicker('[data-prop="datapicker"]');
