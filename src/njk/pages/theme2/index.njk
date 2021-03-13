@@ -1,9 +1,11 @@
 {% extends "../../layouts/default.njk" %}
+
 {% block head %}
     <link rel="stylesheet" href="../../../scss/vw-theme-two.scss">
 {% endblock head %}
 {% block content %}
-    {% include "../../components/_section-hero.njk" %}
-    {% include "../../components/_section-gallery.njk" %}
+    {% include "./_section-hero.njk" %}
+    {% include "./_section-gallery.njk" %}
     {% include "../../components/_section-posts.njk" %}
+    {% include "./_section-reviews.njk" %}
 {% endblock content %}

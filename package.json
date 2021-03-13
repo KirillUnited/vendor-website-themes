@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-nunjucks": "npm run clean && parcel src/njk/pages/theme2/*.njk --out-dir development -p 3000",
+    "dev-nunjucks": "npm run clean && parcel src/njk/pages/theme2/index.njk --out-dir development -p 3000",
     "dev": "npm run clean && parcel public/index.html --out-dir development -p 3000",
     "build": "rimraf ./dist && parcel build public/*.html --out-dir dist --public-url ./",
     "clean": "rimraf ./development && rimraf ./.cache"

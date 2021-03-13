@@ -1,0 +1,9 @@
+{% macro gallery(items) %}
+    <ul class="vw-gallery-list list-style">
+        {% for item in items %}
+            <li class="vw-gallery-list-item has-img-fit">
+                <img src="{{item}}" alt="">
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}
