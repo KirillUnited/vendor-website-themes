@@ -111,6 +111,73 @@ button.vw-button {
     }
 }
 
+.vw-review {
+    padding-left: getrem(190px);
+
+    &-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: getrem(133px);
+        height: getrem(133px);
+    }
+
+    &-title {
+        color: #333;
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 0;
+        line-height: inherit;
+    }
+
+    &-metadata {
+        display: flex;
+        grid-gap: getrem(20px);
+        font-size: getrem(11px);
+        text-transform: uppercase;
+        line-height: 25 / 11 * 1em;
+        margin-bottom: getrem(20px);
+
+        .date {
+            color: rgba(51, 51, 51, 0.5);
+        }
+    }
+
+    &-stats {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .rate {
+            font-weight: 600;
+        }
+    }
+
+    &-content {
+        background-color: #f1f6f6;
+    }
+
+    @include less-sm {
+        padding-left: 0;
+        padding-top: 0;
+
+        &-img {
+            top: getvw(45px);
+            left: 50%;
+            transform: translate(-50%, 0);
+            width: getvw(80px);
+            height: getvw(80px);
+        }
+
+        &-content {
+            padding-top: getvw(170px);
+        }
+
+        &-title {
+            margin-left: auto;
+        }
+    }
+}
+
 .vw-form {
 
     &-input,
