@@ -7,3 +7,13 @@
         {% endfor %}
     </ul>
 {% endmacro %}
+{% macro stats(items) %}
+    <ul class="list-style">
+        {% for item in items %}
+            <li>
+                <span class="rate">{{item.value}}</span>
+                <span>{{item.key}}</span>
+            </li>
+        {% endfor %}
+    </ul>
+{% endmacro %}

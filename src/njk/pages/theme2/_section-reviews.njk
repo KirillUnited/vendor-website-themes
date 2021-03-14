@@ -1,3 +1,7 @@
+{% import "../../macros/macro-review.njk" as review %}
+{% set stats1 = [{key: "Responsiveness", value: "5.0"}, {key: "Value", value: "5.0"}, {key: "Professionalism", value: "5.0"}, {key: "Reccomendation possibility", value: "5.0"}] %}
+{% set stats2 = [{key: "Responsiveness", value: "4.0"}, {key: "Value", value: "3.0"}, {key: "Professionalism", value: "5.0"}, {key: "Reccomendation possibility", value: "5.0"}] %}
+{% set statsArray = [stats1, stats2] %}
 <section class="vw-section vw-reviews" id="reviews">
     <div class="vw-section-header">
         <div class="vw-container">
@@ -9,41 +13,11 @@
     <div class="vw-section-content">
         <div class="vw-container">
             <ul class="vw-reviews-list list-style">
-                <li class="vw-reviews-list-item">
-                    <article class="vw-review">
-                        <div class="vw-review-img has-img-fit"><img src="https://assets.codepen.io/12005/windmill.jpg" alt=""></div>
-                        <div class="vw-review-content">
-                            <div class="vw-review-metadata">
-                                <span>rating</span>
-                                <h3 class="vw-review-title">Emily R</h3>
-                                <span class="date">January 25, 2018</span>
-                            </div>
-                            <p class="vw-review-desc">My fiancé and I had an absolutely wonderful time having our engagement photos taken with Mr. Hawk. He was kind, generous with his time and knew exactly how to pose us to get the most flattering shots. We were able to examine many of the shots after he took them during the session and given the option to retake any particular shot if we didn’t like positioning. Photos came back in a timely manner and are absolutely beautiful. The editing was done so well the images almost floated off the page. I would recommend Hawk Photography to anyone looking for a professional, knowledgeable and generous... My fiancé and I had an absolutely wonderful time having our engagement photos taken with Mr. Hawk. He was kind, generous with his time and knew exactly how to pose us to get the most flattering shots. We were able to examine many of the shots after he took them during the session and given the option to retake any particular shot if we didn’t like positioning. Photos came back in a timely manner and are absolutely beautiful. The editing was done so well the images almost floated off the page. I would recommend Hawk Photography to anyone looking for a professional, knowledgeable and generous...</p>
-                            <a href="#">read more</a>
-                        </div>
-                        <div class="vw-review-stats hidden-xs">
-                            <ul class="list-style">
-                                <li>
-                                    <span class="rate">5.0</span>
-                                    <span>Responsiveness</span>
-                                </li>
-                                <li>
-                                    <span class="rate">5.0</span>
-                                    <span>Value</span>
-                                </li>
-                                <li>
-                                    <span class="rate">5.0</span>
-                                    <span>Professionalism
-                                    </span>
-                                </li>
-                                <li>
-                                    <span class="rate">5.0</span>
-                                    <span>Reccomendation possibility</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </article>
-                </li>
+                {% for stats in statsArray %}
+                    <li class="vw-reviews-list-item">
+                        {{review.review("https://assets.codepen.io/12005/windmill.jpg", "Emily R", "January 25, 2018", "My fiancé and I had an absolutely wonderful time having our engagement photos taken with Mr. Hawk. He was kind, generous with his time and knew exactly how to", stats)}}
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>

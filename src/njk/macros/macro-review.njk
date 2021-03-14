@@ -1,0 +1,23 @@
+{% import "./macro-list.njk" as list %}
+
+{% macro review(avatar, author, date, desc, stats) %}
+    <article class="vw-review">
+        {% if avatar %}
+            <div class="vw-review-img has-img-fit">
+                <img src="{{avatar}}" alt="{{author}}">
+            </div>
+        {% endif %}
+        <div class="vw-review-content">
+            <div class="vw-review-metadata">
+                <span>rating</span>
+                <h3 class="vw-review-title">{{author}}</h3>
+                <span class="date">{{date}}</span>
+            </div>
+            <p class="vw-review-desc">{{desc}}</p>
+            <a href="#">read more</a>
+        </div>
+        <div class="vw-review-stats hidden-xs">
+            {{list.stats(stats)}}
+        </div>
+    </article>
+{% endmacro %}
