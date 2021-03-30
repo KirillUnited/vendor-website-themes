@@ -1,8 +1,14 @@
-{% macro gallery(items) %}
-    <ul class="vw-gallery-list list-style">
+{% macro gallery(items, hasModals) %}
+    <ul class="vw-gallery-list list-style" data-prop="lightgallery">
         {% for item in items %}
             <li class="vw-gallery-list-item has-img-fit">
-                <img src="{{item}}" alt="">
+                {% if hasModals %}
+                    <a class="img-bg has-img-fit" href="{{item}}">
+                        <img src="{{item}}" alt="">
+                    </a>
+                {% else %}
+                    <img src="{{item}}" alt="">
+                {% endif %}
             </li>
         {% endfor %}
     </ul>

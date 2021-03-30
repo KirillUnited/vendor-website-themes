@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev-nunjucks": "npm run clean && parcel src/njk/pages/theme2/index.njk --out-dir development -p 3000",
-    "build-nunjucks": "rimraf ./dist && parcel build src/njk/pages/theme2/index.njk --out-dir dist --public-url ./ --no-source-maps --no-minify",
+    "dev-nunjucks": "npm run clean && parcel src/njk/pages/common/gallery.njk --out-dir development -p 3000",
+    "build-nunjucks": "rimraf ./dist && parcel build src/njk/pages/common/gallery.njk --out-dir dist --public-url ./ --no-source-maps --no-minify",
     "dev": "npm run clean && parcel public/index.html --out-dir development -p 3000",
     "build": "rimraf ./dist && parcel build public/*.html --out-dir dist --public-url ./",
     "clean": "rimraf ./development && rimraf ./.cache"

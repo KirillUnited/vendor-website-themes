@@ -1,8 +1,8 @@
 /* Utility */
 .has-img-fit {
     position: relative;
-
-    &>img {
+    &>img,
+    &>.img-bg {
         @include o-fit-absolute();
     }
 }

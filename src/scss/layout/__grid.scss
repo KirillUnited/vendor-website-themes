@@ -5,6 +5,10 @@
     padding-top: getrem($header-height);
 }
 
+.vw-content {
+    flex: 1 0 auto;
+}
+
 .vw-container {
     position: relative;
     display: flex;

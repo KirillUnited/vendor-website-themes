@@ -58,8 +58,13 @@ button.vw-button {
 .vw-gallery {
     .vw-container {
         padding-top: Min(getrem(6px), getvw(2px));
+
+        &:last-child {
+            border-bottom: none;
+        }
     }
 }
+
 .vw-gallery {
     &-list {
         height: auto;
