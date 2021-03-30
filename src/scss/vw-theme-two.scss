@@ -28,35 +28,45 @@ button.vw-button {
         position: absolute;
         content: '';
         display: block;
-        top: 100%;
         left: 0;
         right: 0;
-        height: Min(355px, getvw(120px));
-        background-color: inherit;
+        bottom: 0;
+        height: Min(373px, getvw(120px));
+        background-color: #fff;
+        z-index: 0;
+    }
+
+    .has-img-fit>img {
+        z-index: 1;
+    }
+
+    .vw-container {
+        padding-bottom: Min(getrem(6px), getvw(2px));
+    }
+
+    &-img {
+        height: Min(getrem(732px), 79vh);
+    }
+
+    @include less-sm {
+        &-img {
+            height: auto;
+        }
     }
 }
 
 .vw-gallery {
     .vw-container {
-        background-color: transparent;
+        padding-top: Min(getrem(6px), getvw(2px));
     }
-
+}
+.vw-gallery {
     &-list {
         height: auto;
         grid-template-rows: repeat(auto-fill, minmax(min(355px, #{getvw(90px)}), 1fr));
 
         &-item {
             padding-top: percentage(355 / 544);
-
-            &:first-child {
-                grid-row: 1/3;
-                grid-column: 1/3;
-                padding-top: percentage(732 / 1100);
-            }
-
-            &:nth-child(2) {
-                grid-row: 3/5;
-            }
         }
     }
 }
