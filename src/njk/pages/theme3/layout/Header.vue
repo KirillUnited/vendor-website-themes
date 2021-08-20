@@ -18,10 +18,10 @@
         </label>
 
         <div class="vw-header-logo vw-header-item has-img-fit">
-          <img src="../../../img/vw-logo.png" alt="logo" />
+          <img src="../../../../img/vw-logo.png" alt="logo" />
           <img
             class="logo-invert"
-            src="../../../img/vw-logo-invert.png"
+            src="../../../../img/vw-logo-invert.png"
             alt="logo"
           />
         </div>
