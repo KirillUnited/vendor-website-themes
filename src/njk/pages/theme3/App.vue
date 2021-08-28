@@ -34,6 +34,28 @@
           </div>
         </div>
       </section>
+          <section class="vw-section vw-reviews" id="reviews">
+        <div class="vw-section-header">
+            <div class="vw-container">
+                <h2 v-html="messages.reviews">
+                    Reviews
+                </h2>
+            </div>
+        </div>
+        <div class="vw-section-content">
+            <div class="vw-container">
+                <ul class="vw-reviews-list list-style">
+                    <li class="vw-reviews-list-item">
+                      <ReviewCard></ReviewCard>
+                    </li>
+                    <li class="vw-reviews-list-item">
+                      <ReviewCard></ReviewCard>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     </main>
     <Footer></Footer>
   </div>
@@ -41,17 +63,19 @@
 
 <script>
 import ArticleCard from "./components/ArticleCard.vue";
+import ReviewCard from './components/ReviewCard.vue';
 import Footer from "./layout/Footer.vue";
 import Header from "./layout/Header.vue";
 export default {
-  components: { Header, Footer, ArticleCard },
+  components: { Header, Footer, ArticleCard, ReviewCard },
   name: "App",
   data() {
     return {
       messages: {
         title: `Wedding photographer<br/>
                 Based in seattle, WA`,
-        blog: `Blog`,
+        blog: `Recent posts`,
+        reviews: `Recent reviews`,
       },
       items: [
         "https://assets.codepen.io/12005/windmill.jpg",
@@ -63,5 +87,46 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+h1,
+.vw-h1,
+h2,
+.vw-h2,
+h3,
+.vw-h3,
+h4,
+.vw-h4 {
+  position: relative;
+  text-align: left;
+  font-family: "SourceSansPro";
+  font-weight: 300;
+  text-transform: uppercase;
+
+  .vw-section-header & {
+    padding-bottom: 40px;
+    &::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      content: "";
+      width: 47px;
+      height: 2px;
+      background-color: #000000;
+    }
+  }
+}
+.vw-section-header {
+  padding-bottom: 40px;
+}
+.vw-button,
+a.vw-button,
+button.vw-button {
+  font-family: "Lato";
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.vw-posts-list-item:nth-child(2n) .vw-post-card {
+  flex-direction: row;
+}
 </style>

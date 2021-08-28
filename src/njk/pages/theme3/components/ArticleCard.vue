@@ -25,5 +25,27 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.vw-post {
+  &-card {
+    gap: 0;
+
+    &-content {
+      flex: 1 1 100%;
+      max-width: 100%;
+      text-align: left;
+      background-color: #f8f9fa;
+    }
+
+    &-metadata {
+      justify-content: flex-start;
+    }
+    .vw-button {
+      margin-top: 65px;
+    }
+    &-img {
+      height: auto;
+    }
+  }
+}
 </style>
