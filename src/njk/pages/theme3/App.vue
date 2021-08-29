@@ -9,10 +9,7 @@
           </div>
         </div>
         <div class="vw-hero-img vw-container-fluid has-img-fit">
-          <img
-            :src="heroImage"
-            alt=""
-          />
+          <img :src="heroImage" alt="" />
         </div>
       </section>
       <section class="vw-section vw-posts" id="posts">
@@ -144,7 +141,7 @@ h4,
 .vw-button,
 a.vw-button,
 button.vw-button {
-  font-family: "Lato";
+  font-family: "Lato", sans-serif;
   font-weight: 400;
   text-transform: uppercase;
 }
