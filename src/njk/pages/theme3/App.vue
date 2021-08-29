@@ -10,7 +10,7 @@
         </div>
         <div class="vw-hero-img vw-container-fluid has-img-fit">
           <img
-            src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            :src="heroImage"
             alt=""
           />
         </div>
@@ -24,38 +24,36 @@
         <div class="vw-section-content">
           <div class="vw-container">
             <ul class="vw-posts-list list-style">
-              <li class="vw-posts-list-item">
-                <ArticleCard></ArticleCard>
-              </li>
-              <li class="vw-posts-list-item">
-                <ArticleCard></ArticleCard>
+              <li
+                v-for="article in articles"
+                :key="article.id"
+                class="vw-posts-list-item"
+              >
+                <ArticleCard v-bind:article="article"></ArticleCard>
               </li>
             </ul>
           </div>
         </div>
       </section>
-          <section class="vw-section vw-reviews" id="reviews">
+      <section class="vw-section vw-reviews" id="reviews">
         <div class="vw-section-header">
-            <div class="vw-container">
-                <h2 v-html="messages.reviews">
-                    Reviews
-                </h2>
-            </div>
+          <div class="vw-container">
+            <h2 v-html="messages.reviews">Reviews</h2>
+          </div>
         </div>
         <div class="vw-section-content">
-            <div class="vw-container">
-                <ul class="vw-reviews-list list-style">
-                    <li class="vw-reviews-list-item">
-                      <ReviewCard></ReviewCard>
-                    </li>
-                    <li class="vw-reviews-list-item">
-                      <ReviewCard></ReviewCard>
-                    </li>
-                </ul>
-            </div>
+          <div class="vw-container">
+            <ul class="vw-reviews-list list-style">
+              <li class="vw-reviews-list-item">
+                <ReviewCard></ReviewCard>
+              </li>
+              <li class="vw-reviews-list-item">
+                <ReviewCard></ReviewCard>
+              </li>
+            </ul>
+          </div>
         </div>
-    </section>
-
+      </section>
     </main>
     <Footer></Footer>
   </div>
@@ -63,26 +61,47 @@
 
 <script>
 import ArticleCard from "./components/ArticleCard.vue";
-import ReviewCard from './components/ReviewCard.vue';
+import ReviewCard from "./components/ReviewCard.vue";
 import Footer from "./layout/Footer.vue";
 import Header from "./layout/Header.vue";
+import heroImage from "../../../img/theme3/foto-pettine-PVMw6stOVo0-unsplash (3).jpg";
+import articleImage1 from "../../../img/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg";
+import articleImage2 from "../../../img/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg";
 export default {
   components: { Header, Footer, ArticleCard, ReviewCard },
   name: "App",
   data() {
     return {
+      heroImage: heroImage,
       messages: {
         title: `Wedding photographer<br/>
                 Based in seattle, WA`,
         blog: `Recent posts`,
         reviews: `Recent reviews`,
       },
+      articles: [
+        {
+          image: articleImage1,
+          title: "Wedding Videography Packages",
+          body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow. As you use your imagination to configure your wedding day, you are thinking about what wedding songs you will walk down the aisle to while...`,
+        },
+        {
+          image: articleImage2,
+          title: "Wedding Videography: Romeo and Tami’s Wedding Reel",
+          body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow...`,
+        },
+      ],
       items: [
         "https://assets.codepen.io/12005/windmill.jpg",
         "https://assets.codepen.io/12005/suspension-bridge.jpg",
         "https://assets.codepen.io/12005/sunset.jpg",
       ],
     };
+  },
+  created() {
+    // fetch("https://jsonplaceholder.typicode.com/posts")
+    //   .then((response) => response.json())
+    //   .then((json) => this.articles = json);
   },
 };
 </script>
@@ -115,6 +134,9 @@ h4,
       background-color: #000000;
     }
   }
+}
+.vw-hero {
+  background-color: transparent;
 }
 .vw-section-header {
   padding-bottom: 40px;

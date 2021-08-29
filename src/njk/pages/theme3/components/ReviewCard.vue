@@ -1,8 +1,6 @@
 <template>
   <article class="vw-review">
-    <div class="vw-review-img has-img-fit"><img src="" alt="" /></div>
     <div class="vw-review-content">
-      <h3 class="vw-review-title">Emily R</h3>
       <p class="vw-review-metadata">
         <span>rating</span>
         <span class="date">January 25, 2018</span>
@@ -28,6 +26,8 @@
         generous...
       </p>
       <a href="#">read more</a>
+      <div class="vw-review-img has-img-fit"><img src="" alt="" /></div>
+      <h3 class="vw-review-title">Emily R</h3>
     </div>
     <div class="vw-review-stats hidden-xs">
       <ul class="list-style">
@@ -46,5 +46,12 @@
 export default {};
 </script>
 
-<style>
+<style lang="scss" scoped>
+.vw-review {
+  padding-left: 0;
+
+  &-img {
+      position: relative;
+  }
+}
 </style>

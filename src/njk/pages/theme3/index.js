@@ -1,5 +1,13 @@
 import Vue from 'vue';
 import App from './App.vue';
+// import modal from '../../../js/modal.js';
+// import header from '../../../js/header.js';
+
+// window.VW = window.VW || {};
+// window.VW.modal = modal;
+// window.VW.header = header;
+// window.VW.modal();
+// window.VW.header();
 
 new Vue({ render: createElement => createElement(App) }).$mount('#app');
 
