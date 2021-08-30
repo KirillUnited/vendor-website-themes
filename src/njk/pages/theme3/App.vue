@@ -104,6 +104,10 @@ export default {
 </script>
 
 <style lang="scss">
+body {  
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+}
 h1,
 .vw-h1,
 h2,
@@ -114,8 +118,7 @@ h4,
 .vw-h4 {
   position: relative;
   text-align: left;
-  font-family: "SourceSansPro";
-  font-weight: 300;
+  font-family: "Source Sans Pro", sans-serif;
   text-transform: uppercase;
 
   .vw-section-header & {

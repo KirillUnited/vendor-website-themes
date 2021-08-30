@@ -41,7 +41,7 @@ export default {
       flex: 1 1 100%;
       max-width: 100%;
       text-align: left;
-      background-color: #f8f9fa;
+      background-color: var(--colorPrimary);
     }
 
     &-metadata {

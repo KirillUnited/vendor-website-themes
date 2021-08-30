@@ -51,7 +51,10 @@ export default {};
   padding-left: 0;
 
   &-img {
-      position: relative;
+    position: relative;
+  }
+  &-content {
+    background-color: var(--colorPrimary);
   }
 }
 </style>
