@@ -45,10 +45,11 @@
                 class="vw-header-menu-link vw-button"
                 data-toggle="modal"
                 data-target="#contactModal"
+                @click="showModal"
               >
                 contact
               </button>
-              <!-- {% include "../components/_modal.njk" %} -->
+              <Modal v-show="isModalVisible" @close="closeModal" />
             </li>
           </ul>
         </nav>
@@ -61,7 +62,9 @@
 </template>
 
 <script>
+import Modal from "../components/Modal.vue";
 export default {
+  components: { Modal },
   data() {
     return {
       links: [
@@ -71,7 +74,16 @@ export default {
         { title: "testimonials", id: "reviews" },
         { title: "blog", id: "posts" },
       ],
+      isModalVisible: false,
     };
+  },
+  methods: {
+    showModal() {
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    },
   },
 };
 </script>
