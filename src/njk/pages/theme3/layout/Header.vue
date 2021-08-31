@@ -79,9 +79,11 @@ export default {
   },
   methods: {
     showModal() {
+      document.documentElement.classList.add("modal-is-active");
       this.isModalVisible = true;
     },
     closeModal() {
+      document.documentElement.classList.remove("modal-is-active");
       this.isModalVisible = false;
     },
   },

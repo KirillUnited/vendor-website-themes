@@ -117,7 +117,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../scss/mixins/_mixins.scss";
 body {
   font-family: "Lato", sans-serif;
   font-weight: 400;

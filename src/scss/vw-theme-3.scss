@@ -1,5 +1,3 @@
 /* VENDOR WEBSITE CUSTOM STYLING: THEME THREE */
-:root {
-    --colorPrimary: #f8f9fa;
-}
+@import "./utilities/vars";
 @import "./mixins/mixins";
