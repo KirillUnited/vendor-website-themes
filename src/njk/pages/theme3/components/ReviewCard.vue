@@ -2,40 +2,25 @@
   <article class="vw-review">
     <div class="vw-review-content">
       <p class="vw-review-metadata">
-        <span>rating</span>
+        <span class="rating has-stars">
+          <span class="rating-stars" :style="{ '--rating': rating }"></span>
+          <span class="rating-value">{{ rating }}</span>
+        </span>
         <span class="date">January 25, 2018</span>
       </p>
       <p class="vw-review-desc">
-        My fiancé and I had an absolutely wonderful time having our engagement
-        photos taken with Mr. Hawk. He was kind, generous with his time and knew
-        exactly how to pose us to get the most flattering shots. We were able to
-        examine many of the shots after he took them during the session and
-        given the option to retake any particular shot if we didn’t like
-        positioning. Photos came back in a timely manner and are absolutely
-        beautiful. The editing was done so well the images almost floated off
-        the page. I would recommend Hawk Photography to anyone looking for a
-        professional, knowledgeable and generous... My fiancé and I had an
-        absolutely wonderful time having our engagement photos taken with Mr.
-        Hawk. He was kind, generous with his time and knew exactly how to pose
-        us to get the most flattering shots. We were able to examine many of the
-        shots after he took them during the session and given the option to
-        retake any particular shot if we didn’t like positioning. Photos came
-        back in a timely manner and are absolutely beautiful. The editing was
-        done so well the images almost floated off the page. I would recommend
-        Hawk Photography to anyone looking for a professional, knowledgeable and
-        generous...
+        {{ body }}
       </p>
-      <a href="#">read more</a>
-      <div class="vw-review-img has-img-fit"><img src="" alt="" /></div>
-      <h3 class="vw-review-title">Emily R</h3>
+      <a href="#" class="more">Read more</a>
+      <div class="vw-review-author">
+        <div class="vw-review-img has-img-fit"><img src="" alt="" /></div>
+        <h3 class="vw-review-title">{{ author }}</h3>
+      </div>
     </div>
-    <div class="vw-review-stats hidden-xs">
-      <ul class="list-style">
-        <li><span class="rate">5.0</span><span>Responsiveness</span></li>
-        <li><span class="rate">5.0</span><span>Value</span></li>
-        <li><span class="rate">5.0</span><span>Professionalism </span></li>
-        <li>
-          <span class="rate">5.0</span><span>Reccomendation possibility</span>
+    <div class="vw-review-stats rating hidden-xs">
+      <ul class="rating-list list-style">
+        <li v-for="rate in ratingList" :key="rate.id">
+          <span class="rate rating-value">5.0</span><span>{{ rate }}</span>
         </li>
       </ul>
     </div>
@@ -43,18 +28,60 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: ["review"],
+  data() {
+    return {
+      author: this.review.author,
+      body: this.review.body,
+      rating: this.review.rating,
+      ratingList: [
+        "Responsiveness",
+        "Value",
+        "Professionalism",
+        "Reccomendation possibility",
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
+@import "../../../../scss/mixins/_mixins";
+@import "../../../../scss/components/_rating";
 .vw-review {
   padding-left: 0;
 
   &-img {
     position: relative;
+    background-color: #bababa;
   }
   &-content {
     background-color: var(--colorPrimary);
+  }
+  &-stats {
+    width: getrem(480px);
+    padding-top: 4rem;
+  }
+  &-author {
+    display: flex;
+    align-items: center;
+    margin-top: getrem(30px);
+
+    .vw-review-img {
+      width: getrem(40px);
+      height: getrem(40px);
+      margin-right: 10px;
+    }
+
+    .vw-review-title {
+      font-family: "Lato";
+      font-size: getrem(11px);
+    }
+  }
+  .more {
+    opacity: 0.5;
+    color: #333;
   }
 }
 </style>

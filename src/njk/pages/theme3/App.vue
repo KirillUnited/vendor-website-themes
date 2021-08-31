@@ -12,7 +12,7 @@
           <img :src="heroImage" alt="" />
         </div>
       </section>
-      <section class="vw-section vw-posts" id="posts">
+      <section v-if="articles.length" class="vw-section vw-posts" id="posts">
         <div class="vw-section-header">
           <div class="vw-container">
             <h2 v-html="messages.blog">Recent posts</h2>
@@ -32,7 +32,7 @@
           </div>
         </div>
       </section>
-      <section class="vw-section vw-reviews" id="reviews">
+      <section v-if="reviews.length" class="vw-section vw-reviews" id="reviews">
         <div class="vw-section-header">
           <div class="vw-container">
             <h2 v-html="messages.reviews">Reviews</h2>
@@ -41,11 +41,12 @@
         <div class="vw-section-content">
           <div class="vw-container">
             <ul class="vw-reviews-list list-style">
-              <li class="vw-reviews-list-item">
-                <ReviewCard></ReviewCard>
-              </li>
-              <li class="vw-reviews-list-item">
-                <ReviewCard></ReviewCard>
+              <li
+                v-for="review in reviews"
+                :key="review.id"
+                class="vw-reviews-list-item"
+              >
+                <ReviewCard v-bind:review="review"></ReviewCard>
               </li>
             </ul>
           </div>
@@ -88,6 +89,18 @@ export default {
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow...`,
         },
       ],
+      reviews: [
+        {
+          rating: 5.0,
+          author: "Josh C",
+          body: `Working with Daryl for the last year of wedding planning was great from beginning to end. He truly made my wedding very personal making sure he captured every special moment.`,
+        },
+        {
+          rating: 5.0,
+          author: "Josh C",
+          body: `My fiancé and I had an absolutely wonderful time having our engagement photos taken with Mr. Hawk. He was kind, generous with his time and knew exactly how to pose us to get the most flattering shots. We were able to examine many of the shots after he took them during the session and given the option to retake any particular shot if we didn’t like positioning. Photos came back in a timely manner and are absolutely beautiful. The editing was done so well the images almost floated off the page. I would recommend Hawk Photography to anyone looking for a professional, knowledgeable and generous`,
+        },
+      ],
       items: [
         "https://assets.codepen.io/12005/windmill.jpg",
         "https://assets.codepen.io/12005/suspension-bridge.jpg",
@@ -104,7 +117,8 @@ export default {
 </script>
 
 <style lang="scss">
-body {  
+@import "../../../scss/mixins/_mixins.scss";
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
 }
