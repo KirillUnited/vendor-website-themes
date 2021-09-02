@@ -29,6 +29,7 @@
     "parcel-plugin-nunjucks": "^2.2.2",
     "postcss": "^7.0.35",
     "postcss-modules": "^3.2.2",
+    "pug": "^3.0.2",
     "sass": "^1.32.8",
     "vue-template-compiler": "^2.6.14"
   },
@@ -40,6 +41,6 @@
     "vue-hot-reload-api": "^2.3.4"
   },
   "alias": {
-    "vue" : "./node_modules/vue/dist/vue.common.js"
+    "vue": "./node_modules/vue/dist/vue.common.js"
   }
 }
