@@ -67,6 +67,14 @@ export default {
   components: { Modal },
   data() {
     return {
+      model: {
+        $nav: null,
+        $navContent: null,
+        scrollTimeOut: true,
+        lastYPos: 0,
+        yPos: 0,
+        yPosDelta: 5,
+      },
       links: [
         { title: "about me", id: "about" },
         { title: "gallery", id: "gallery" },
@@ -86,6 +94,47 @@ export default {
       document.documentElement.classList.remove("modal-is-active");
       this.isModalVisible = false;
     },
+    onScroll() {
+      // Hide Header on scroll down and show on scroll up
+      var scrollTimeOut = this.model.scrollTimeOut,
+        lastYPos = this.model.lastYPos,
+        yPos = this.model.yPos,
+        yPosDelta = this.model.yPosDelta,
+        nav = this.model.$nav,
+        navContent = this.model.$navContent,
+        navHeight = nav.offsetHeight,
+        setNavClass = function () {
+          scrollTimeOut = false;
+          yPos = document.documentElement.scrollTop;
+
+          if (Math.abs(lastYPos - yPos) >= yPosDelta) {
+            if (yPos > lastYPos && yPos > navHeight && !navContent.checked) {
+              nav.classList.add("nav-up");
+              nav.classList.remove("scroll-up");
+            } else {
+              nav.classList.remove("nav-up");
+              nav.classList.add("scroll-up");
+            }
+            lastYPos = yPos;
+          }
+          if (yPos === 0) {
+            nav.classList.remove("scroll-up");
+          }
+        };
+      window.addEventListener("scroll", () => {
+        scrollTimeOut = true;
+      });
+      setInterval(() => {
+        if (scrollTimeOut) {
+          setNavClass();
+        }
+      }, 25);
+    },
+  },
+  mounted() {
+    this.model.$nav = document.querySelector(".vw-header");
+    this.model.$navContent = document.querySelector("#menu-active");
+    this.onScroll();
   },
 };
 </script>
