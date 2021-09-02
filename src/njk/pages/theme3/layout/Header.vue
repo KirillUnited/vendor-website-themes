@@ -55,6 +55,7 @@
         </nav>
         <div class="vw-header-item has-social">
           <!-- {{ social.socialList("is-colored") }} -->
+          <SocialLinkList :isColored="false" />
         </div>
       </div>
     </div>
@@ -63,8 +64,9 @@
 
 <script>
 import Modal from "../components/Modal.vue";
+import SocialLinkList from "../components/SocialLinkList.vue";
 export default {
-  components: { Modal },
+  components: { Modal, SocialLinkList },
   data() {
     return {
       model: {
@@ -139,5 +141,57 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "../../../../scss/mixins/_mixins";
+.vw-header {
+  background-color: var(--themeColor);
+  &.scroll-up {
+    background-color: var(--themeColorInvert);
+  }
+  @include less-sm() {
+    &-logo {
+      img {
+        display: none;
+
+        &.logo-invert {
+          display: block;
+        }
+      }
+    }
+    &-menu {
+      align-items: flex-start;
+      &-item {
+        width: 100%;
+        & + * {
+          margin-top: 1em;
+        }
+      }
+      &-link {
+        &.vw-button {
+          color: var(--themeColor);
+          padding-left: getvw(42px);
+          padding-right: getvw(42px);
+        }
+      }
+    }
+    #menu-active:checked ~ .vw-header-navbar {
+      background-color: var(--themeColorInvert);
+      .lines [class^="line-"] {
+        background-color: var(--themeColor);
+      }
+    }
+    .vw-social {
+      &-list {
+        justify-content: flex-start;
+        padding-left: getvw(42px);
+        padding-right: getvw(42px);
+      }
+      &-link {
+        svg {
+          fill: var(--themeColor);
+        }
+      }
+    }
+  }
+}
 </style>
