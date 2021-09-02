@@ -55,7 +55,15 @@
 </template>
 
 <script>
-export default {};
+import datepicker from "js-datepicker";
+export default {
+  data() {
+    return {};
+  },
+  mounted() {
+    const picker = datepicker('[data-prop="datapicker"]');
+  },
+};
 </script>
 
 <style lang="scss" scoped>
