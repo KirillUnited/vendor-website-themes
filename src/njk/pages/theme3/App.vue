@@ -62,15 +62,12 @@ import ArticleCard from "./components/ArticleCard.vue";
 import ReviewCard from "./components/ReviewCard.vue";
 import Footer from "./layout/Footer.vue";
 import Header from "./layout/Header.vue";
-import heroImage from "../../../img/theme3/foto-pettine-PVMw6stOVo0-unsplash (3).jpg";
-import articleImage1 from "../../../img/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg";
-import articleImage2 from "../../../img/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg";
 export default {
   components: { Header, Footer, ArticleCard, ReviewCard },
   name: "App",
   data() {
     return {
-      heroImage: heroImage,
+      heroImage: require("../../../img/theme3/foto-pettine-PVMw6stOVo0-unsplash (3).jpg"),
       messages: {
         title: `Wedding photographer<br/>
                 Based in seattle, WA`,
@@ -79,12 +76,12 @@ export default {
       },
       articles: [
         {
-          image: articleImage1,
+          image: require("../../../img/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg"),
           title: "Wedding Videography Packages",
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow. As you use your imagination to configure your wedding day, you are thinking about what wedding songs you will walk down the aisle to while...`,
         },
         {
-          image: articleImage2,
+          image: require("../../../img/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg"),
           title: "Wedding Videography: Romeo and Tami’s Wedding Reel",
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow...`,
         },
@@ -117,51 +114,4 @@ export default {
 </script>
 
 <style lang="scss">
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-}
-h1,
-.vw-h1,
-h2,
-.vw-h2,
-h3,
-.vw-h3,
-h4,
-.vw-h4 {
-  position: relative;
-  text-align: left;
-  font-family: "Source Sans Pro", sans-serif;
-  text-transform: uppercase;
-
-  .vw-section-header & {
-    padding-bottom: 40px;
-    &::after {
-      display: block;
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      content: "";
-      width: 47px;
-      height: 2px;
-      background-color: #000000;
-    }
-  }
-}
-.vw-hero {
-  background-color: transparent;
-}
-.vw-section-header {
-  padding-bottom: 40px;
-}
-.vw-button,
-a.vw-button,
-button.vw-button {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-.vw-posts-list-item:nth-child(2n) .vw-post-card {
-  flex-direction: row;
-}
 </style>

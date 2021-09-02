@@ -30,12 +30,15 @@
         <a href="#" class="text-truncate">www.kastlehphotography.com</a>
       </p>
       <!-- {% include "./_form.njk" %} -->
+      <Form />
     </div>
   </div>
 </template>
 
 <script>
+import Form from "./Form.vue";
 export default {
+  components: { Form },
   name: "modal",
   methods: {
     close() {
@@ -45,5 +48,12 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.vw-modal {
+  &-content {
+    p {
+      text-align: left;
+    }
+  }
+}
 </style>

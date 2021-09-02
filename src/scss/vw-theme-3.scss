@@ -1,3 +1,61 @@
 /* VENDOR WEBSITE CUSTOM STYLING: THEME THREE */
 @import "./utilities/vars";
 @import "./mixins/mixins";
+
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+}
+
+h1,
+.vw-h1,
+h2,
+.vw-h2,
+h3,
+.vw-h3,
+h4,
+.vw-h4 {
+    position: relative;
+    text-align: left;
+    font-family: "Source Sans Pro", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}
+
+h1,
+.vw-h1,
+h2,
+.vw-h2 {
+    padding-bottom: 30px/38px*1em;
+
+    &::after {
+        display: block;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        content: "";
+        width: 47px;
+        height: 2px;
+        background-color: #000000;
+    }
+}
+
+.vw-hero {
+    background-color: transparent;
+}
+
+.vw-section-header {
+    padding-bottom: 40px;
+}
+
+.vw-button,
+a.vw-button,
+button.vw-button {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.vw-posts-list-item:nth-child(2n) .vw-post-card {
+    flex-direction: row;
+}
