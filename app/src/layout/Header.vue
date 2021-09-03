@@ -18,10 +18,10 @@
         </label>
 
         <div class="vw-header-logo vw-header-item has-img-fit">
-          <img src="../../../../img/vw-logo.png" alt="logo" />
+          <img src="../assets/images/vw-logo.png" alt="logo" />
           <img
             class="logo-invert"
-            src="../../../../img/vw-logo-invert.png"
+            src="../assets/images/vw-logo-invert.png"
             alt="logo"
           />
         </div>
@@ -142,7 +142,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../../../scss/mixins/_mixins";
+@import "../../../src/scss/mixins/_mixins";
 .vw-header {
   background-color: var(--themeColor);
   &.scroll-up {

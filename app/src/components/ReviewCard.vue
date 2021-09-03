@@ -47,8 +47,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../../scss/mixins/_mixins";
-@import "../../../../scss/components/_rating";
+@import "../../../src/scss/mixins/_mixins";
+@import "../../../src/scss/components/_rating";
 .vw-review {
   padding-left: 0;
 

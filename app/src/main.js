@@ -1,4 +1,4 @@
-import "../../../scss/vw-theme-3";
+import "../../src/scss/vw-theme-3";
 import Vue from 'vue';
 import App from './App.vue';
 

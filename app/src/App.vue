@@ -67,7 +67,7 @@ export default {
   name: "App",
   data() {
     return {
-      heroImage: require("../../../img/theme3/foto-pettine-PVMw6stOVo0-unsplash (3).jpg"),
+      heroImage: require("./assets/images/theme3/foto-pettine-PVMw6stOVo0-unsplash (3).jpg"),
       messages: {
         title: `Wedding photographer<br/>
                 Based in seattle, WA`,
@@ -76,12 +76,12 @@ export default {
       },
       articles: [
         {
-          image: require("../../../img/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg"),
+          image: require("./assets/images/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg"),
           title: "Wedding Videography Packages",
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow. As you use your imagination to configure your wedding day, you are thinking about what wedding songs you will walk down the aisle to while...`,
         },
         {
-          image: require("../../../img/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg"),
+          image: require("./assets/images/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg"),
           title: "Wedding Videography: Romeo and Tami’s Wedding Reel",
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow...`,
         },
