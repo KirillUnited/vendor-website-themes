@@ -44,7 +44,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+@import "../../../src/scss/mixins/_mixins";
 .vw-post {
   &-card {
     gap: 0;
@@ -58,12 +59,23 @@ export default {
 
     &-metadata {
       justify-content: flex-start;
+      font-family: "Lato", sans-serif;
+      font-size: Max(10px, Min(12px, #{getvw(12px)}));
+      font-weight: 700;
+      letter-spacing: .1em;
     }
     .vw-button {
       margin-top: 65px;
     }
     &-img {
       height: auto;
+    }
+  }
+  @include less-sm() {
+    &-card {
+      .vw-button {
+        margin-top: 0;
+      }
     }
   }
 }

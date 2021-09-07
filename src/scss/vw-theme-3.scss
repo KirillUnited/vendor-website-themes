@@ -27,6 +27,7 @@ h1,
 h2,
 .vw-h2 {
     padding-bottom: 30px/38px*1em;
+    hyphens: unset;
 
     &::after {
         display: block;
@@ -34,7 +35,7 @@ h2,
         left: 0;
         bottom: 0;
         content: "";
-        width: 47px;
+        width: Max(22px, Min(47px, #{getvw(22px)}));
         height: 2px;
         background-color: #000000;
     }
@@ -56,6 +57,29 @@ button.vw-button {
     text-transform: uppercase;
 }
 
-.vw-posts-list-item:nth-child(2n) .vw-post-card {
-    flex-direction: row;
+@include more-sm() {
+    .vw-posts-list-item:nth-child(2n) .vw-post-card {
+        flex-direction: row;
+    }
+}
+
+@include less-sm() {
+    .vw-section-header {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .vw-hero {
+        padding-bottom: getvw(25px);
+        .vw-container {
+            padding-top: 0;
+            padding-bottom: Max(50px, Min(50px, #{getvw(50px)}));
+        }
+    }
+
+    .vw-reviews {
+        .vw-container {
+            padding: getvw(25px);
+        }
+    }
 }
