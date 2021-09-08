@@ -8,59 +8,13 @@ header.vw-header
           .line-1
           .line-2
           .line-3
-      .vw-header-logo.vw-header-item.has-img-fit
+      a.vw-header-logo.vw-header-item.has-img-fit(href="/")
         img(src="../assets/images/vw-logo.png", alt="logo")
         img.logo-invert(src="../assets/images/vw-logo-invert.png", alt="logo")
       nav.vw-header-item.has-menu
         ul.vw-header-menu.list-style
-          li.vw-header-menu-item(v-for="link in links", :key="link.id")
-            router-link.vw-header-menu-link.vw-button.vw-button-invert(
-              v-if="link.path"
-              :to="{ path: link.path }"
-            )
-              | {{ link.title }}
-              svg.icon.hidden-gt-xs(
-                version="1.1",
-                xmlns="http://www.w3.org/2000/svg",
-                xmlns:xlink="http://www.w3.org/1999/xlink",
-                x="0px",
-                y="0px",
-                viewBox="0 0 492.004 492.004",
-                style="enable-background: new 0 0 492.004 492.004",
-                xml:space="preserve"
-              )
-                g
-                  g
-                    path(
-                      d='M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12\
-                                                                                                                                  c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028\
-                                                                                                                                  c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265\
-                                                                                                                                  c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z'
-                    )
-            a.vw-header-menu-link.vw-button.vw-button-invert(
-              v-else
-              :href="link.href"
-            )
-              | {{ link.title }}
-              svg.icon.hidden-gt-xs(
-                version="1.1",
-                xmlns="http://www.w3.org/2000/svg",
-                xmlns:xlink="http://www.w3.org/1999/xlink",
-                x="0px",
-                y="0px",
-                viewBox="0 0 492.004 492.004",
-                style="enable-background: new 0 0 492.004 492.004",
-                xml:space="preserve"
-              )
-                g
-                  g
-                    path(
-                      d='M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12\
-                                                                                                                                  c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028\
-                                                                                                                                  c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265\
-                                                                                                                                  c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z'
-                    )
-
+          li.vw-header-menu-item(v-for="link in headerLinks", :key="link.id")
+            Link(:link="link")
           li.vw-header-menu-item
             button.vw-header-menu-link.vw-button(
               data-toggle="modal",
@@ -82,9 +36,9 @@ header.vw-header
                   g
                     path(
                       d='M382.678,226.804L163.73,7.86C158.666,2.792,151.906,0,144.698,0s-13.968,2.792-19.032,7.86l-16.124,16.12\
-                                                                                                                                  c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028\
-                                                                                                                                  c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265\
-                                                                                                                                  c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z'
+                                                                                                                                                        c-10.492,10.504-10.492,27.576,0,38.064L293.398,245.9l-184.06,184.06c-5.064,5.068-7.86,11.824-7.86,19.028\
+                                                                                                                                                        c0,7.212,2.796,13.968,7.86,19.04l16.124,16.116c5.068,5.068,11.824,7.86,19.032,7.86s13.968-2.792,19.032-7.86L382.678,265\
+                                                                                                                                                        c5.076-5.084,7.864-11.872,7.848-19.088C390.542,238.668,387.754,231.884,382.678,226.804z'
                     )
             modal(v-show="isModalVisible", @close="closeModal")
       .vw-header-item.has-social
@@ -119,7 +73,7 @@ header.vw-header
   //-       <nav class="vw-header-item has-menu">
   //-         <ul class="vw-header-menu list-style">
   //-           <li
-  //-             v-for="link in links"
+  //-             v-for="link in headerLinks"
   //-             :key="link.id"
   //-             class="vw-header-menu-item"
   //-           >
@@ -156,8 +110,9 @@ header.vw-header
 <script>
 import Modal from "../components/Modal.vue";
 import SocialLinkList from "../components/SocialLinkList.vue";
+import Link from "../components/Link.vue";
 export default {
-  components: { Modal, SocialLinkList },
+  components: { Modal, SocialLinkList, Link },
   data() {
     return {
       model: {
@@ -168,7 +123,7 @@ export default {
         yPos: 0,
         yPosDelta: 5,
       },
-      links: [
+      headerLinks: [
         { title: "about me", path: "", href: "#about" },
         { title: "gallery", path: "/gallery", href: "#gallery" },
         { title: "pricing", path: "", href: "#pricing" },
