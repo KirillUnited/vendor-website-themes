@@ -23,15 +23,16 @@
 
 <script>
 export default {
+  name: "Gallery",
   data() {
     return {
       messages: {
         title: `Gallery`,
       },
       items: [
-        "https://assets.codepen.io/12005/windmill.jpg",
-        "https://assets.codepen.io/12005/suspension-bridge.jpg",
-        "https://assets.codepen.io/12005/sunset.jpg",
+        require("../../assets/images/theme3/foto-pettine-3IA9da9Ohx0-unsplash (3).jpg"),
+        require("../../assets/images/theme3/foto-pettine-IfjHaIoAoqE-unsplash (3).jpg"),
+        require("../../assets/images/theme3/foto-pettine-nkeeRGy_CrI-unsplash (1).jpg"),
       ],
     };
   },

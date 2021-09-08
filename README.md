@@ -1,2 +1,2 @@
-# vendor-website-themes
-Landing pages for vendors
+# Vendor websites
+- Landing page themes for vendors
