@@ -54,6 +54,8 @@ export default {
       path: this.link.path,
       href: this.link.href,
     }
+  },
+  methods: {
   }
 };
 </script>

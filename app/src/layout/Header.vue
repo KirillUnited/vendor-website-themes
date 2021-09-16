@@ -13,7 +13,7 @@ header.vw-header
         img.logo-invert(src="../assets/images/vw-logo-invert.png", alt="logo")
       nav.vw-header-item.has-menu
         ul.vw-header-menu.list-style
-          li.vw-header-menu-item(v-for="link in headerLinks", :key="link.id")
+          li.vw-header-menu-item(v-for="link in headerLinks", :key="link.id", @click="closeMenu")
             Link(:link="link")
           li.vw-header-menu-item
             button.vw-header-menu-link.vw-button(
@@ -134,6 +134,9 @@ export default {
     };
   },
   methods: {
+    closeMenu() {
+      this.model.$navContent.checked = false;
+    },
     showModal() {
       document.documentElement.classList.add("modal-is-active");
       this.isModalVisible = true;
