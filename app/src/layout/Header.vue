@@ -127,8 +127,8 @@ export default {
         { title: "about me", path: "/about", href: "#about" },
         { title: "gallery", path: "/gallery", href: "#gallery" },
         { title: "pricing", path: "/pricing", href: "#pricing" },
-        { title: "testimonials", path: "", href: "#reviews" },
-        { title: "blog", path: "", href: "#posts" },
+        { title: "testimonials", path: "", href: "./#reviews" },
+        { title: "blog", path: "", href: "./#posts" },
       ],
       isModalVisible: false,
     };

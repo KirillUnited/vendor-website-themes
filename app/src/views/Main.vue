@@ -10,6 +10,8 @@
         <img :src="heroImage" alt="" />
       </div>
     </section>
+    <Gallery></Gallery>
+    <About></About>
     <section v-if="articles.length" class="vw-section vw-posts" id="posts">
       <div class="vw-section-header">
         <div class="vw-container">
@@ -56,8 +58,10 @@
 <script>
 import ArticleCard from "../components/ArticleCard.vue";
 import ReviewCard from "../components/ReviewCard.vue";
+import About from './about/About.vue';
+import Gallery from './gallery/Gallery.vue';
 export default {
-  components: { ArticleCard, ReviewCard },
+  components: { ArticleCard, ReviewCard, About, Gallery },
   name: "Main",
   data() {
     return {
