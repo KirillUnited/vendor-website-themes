@@ -43,7 +43,7 @@ header.vw-header
             modal(v-show="isModalVisible", @close="closeModal")
       .vw-header-item.has-social
         //- // {{ social.socialList("is-colored") }}
-        SocialLinkList(:isColored="false")
+        SocialLinkList(:className="{'is-colored' : true}")
   //- <header class="vw-header">
   //-   <div class="vw-container">
   //-     <input
@@ -124,7 +124,7 @@ export default {
         yPosDelta: 5,
       },
       headerLinks: [
-        { title: "about me", path: "", href: "#about" },
+        { title: "about me", path: "/about", href: "#about" },
         { title: "gallery", path: "/gallery", href: "#gallery" },
         { title: "pricing", path: "", href: "#pricing" },
         { title: "testimonials", path: "", href: "#reviews" },

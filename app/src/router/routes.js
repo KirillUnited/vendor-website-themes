@@ -1,5 +1,6 @@
-import Gallery from "../views/gallery/Gallery.vue";
 import Main from "../views/Main.vue";
+import About from "../views/about/About.vue";
+import Gallery from "../views/gallery/Gallery.vue";
 
 const routes = [
     {
@@ -12,6 +13,11 @@ const routes = [
         name: 'main',
         component: Main
     },
+    {
+        path: '/about',
+        name: 'about',
+        component: About
+    },,
     {
         path: '/gallery',
         name: 'gallery',
