@@ -5,7 +5,7 @@
         <h1>{{ messages.title }}</h1>
       </div>
     </div>
-    <div class="vw-section-content">
+    <div v-if="items.length > 0" class="vw-section-content">
       <div class="vw-container">
         <ul class="vw-gallery-list list-style" data-prop="lightgallery">
           <li
@@ -13,7 +13,9 @@
             :key="item"
             class="vw-gallery-list-item has-img-fit"
           >
-            <img :src="item" alt="" />
+            <a class="img-bg has-img-fit" :href="item">
+              <img :src="item" alt="" />
+            </a>
           </li>
         </ul>
       </div>
@@ -22,6 +24,8 @@
 </template>
 
 <script>
+import "lightgallery.js";
+import "lightgallery.js/dist/css/lightgallery.css";
 export default {
   name: "Gallery",
   data() {
@@ -35,6 +39,12 @@ export default {
         require("../../assets/images/theme3/foto-pettine-nkeeRGy_CrI-unsplash (1).jpg"),
       ],
     };
+  },
+  mounted() {
+    lightGallery(document.querySelector('[data-prop="lightgallery"]'), {
+      selector: "a",
+      download: false,
+    });
   },
 };
 </script>

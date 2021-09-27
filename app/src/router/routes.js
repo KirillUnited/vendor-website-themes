@@ -1,6 +1,7 @@
 import Main from "../views/Main.vue";
 import About from "../views/about/About.vue";
 import Gallery from "../views/gallery/Gallery.vue";
+import Pricing from "../views/pricing/Pricing.vue";
 
 const routes = [
     {
@@ -17,11 +18,16 @@ const routes = [
         path: '/about',
         name: 'about',
         component: About
-    },,
+    },
     {
         path: '/gallery',
         name: 'gallery',
         component: Gallery
+    },
+    {
+        path: '/pricing',
+        name: 'pricing',
+        component: Pricing
     },
 ];
 

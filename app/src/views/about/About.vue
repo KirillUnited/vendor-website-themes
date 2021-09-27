@@ -3,7 +3,7 @@
     <div class="vw-section-content">
       <div class="vw-container">
         <div class="vw-about-content">
-          <div class="vw-about-img has-img-fit">
+          <div v-if="images[0]" class="vw-about-img has-img-fit">
             <img :src="images[0]" alt="" />
           </div>
           <div class="vw-about-info">
@@ -21,7 +21,7 @@
               <span>in business since 2008</span>
             </p>
 
-            <div v-html="messages.description"></div>
+            <div v-if="messages.description" v-html="messages.description"></div>
 
             <h3>additional info</h3>
 
