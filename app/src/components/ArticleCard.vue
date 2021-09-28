@@ -1,7 +1,14 @@
 <template lang="pug">
 article.vw-post-card
   .vw-post-card-img.has-img-fit
-    img(:src="image", :alt="title")
+    img(
+      :src="image",
+      :alt="title",
+      loading="lazy",
+      decoding="async",
+      width="520",
+      height="502"
+    )
   .vw-post-card-content
     h3.vw-post-card-title
       | {{ title }}
@@ -62,7 +69,7 @@ export default {
       font-family: "Lato", sans-serif;
       font-size: Max(10px, Min(12px, #{getvw(12px)}));
       font-weight: 700;
-      letter-spacing: .1em;
+      letter-spacing: 0.1em;
     }
     .vw-button {
       margin-top: 65px;

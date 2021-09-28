@@ -4,7 +4,14 @@
       <div class="vw-container">
         <div class="vw-about-content">
           <div v-if="images[0]" class="vw-about-img has-img-fit">
-            <img :src="images[0]" alt="" />
+            <img
+              :src="images[0]"
+              alt=""
+              loading="lazy"
+              decoding="async"
+              width="500"
+              height="733"
+            />
           </div>
           <div class="vw-about-info">
             <div class="vw-about-header">
@@ -21,7 +28,10 @@
               <span>in business since 2008</span>
             </p>
 
-            <div v-if="messages.description" v-html="messages.description"></div>
+            <div
+              v-if="messages.description"
+              v-html="messages.description"
+            ></div>
 
             <h3>additional info</h3>
 

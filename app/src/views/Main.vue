@@ -7,7 +7,26 @@
         </div>
       </div>
       <div class="vw-hero-img vw-container-fluid has-img-fit">
-        <img :src="heroImage" alt="" />
+        <picture class="has-img-fit img-bg">
+          <source
+            media="(max-width: 767px)"
+            sizes="(max-width: 767px) 100vw, 767px"
+            :srcset="heroImage['767px']"
+          />
+          <img
+            sizes="(max-width: 3440px) 40vw, 1376px"
+            :srcset="heroImage['1376px']"
+            :src="
+              require('../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_c_scale,w_1376.jpg')
+            "
+            :alt="messages.title"
+            class="has-img-holder"
+            loading="lazy"
+            decoding="async"
+            width="4999"
+            height="3333"
+          />
+        </picture>
       </div>
     </section>
     <Gallery></Gallery>
@@ -58,14 +77,29 @@
 <script>
 import ArticleCard from "../components/ArticleCard.vue";
 import ReviewCard from "../components/ReviewCard.vue";
-import About from './about/About.vue';
-import Gallery from './gallery/Gallery.vue';
+import About from "./about/About.vue";
+import Gallery from "./gallery/Gallery.vue";
 export default {
   components: { ArticleCard, ReviewCard, About, Gallery },
   name: "Main",
   data() {
     return {
-      heroImage: require("../assets/images/theme3/foto-pettine-PVMw6stOVo0-unsplash (3).jpg"),
+      heroImage: {
+        "767px":
+          require("../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_ar_1_1,c_fill,g_auto__c_scale,w_320.jpg") +
+          " 320w," +
+          require("../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_ar_1_1,c_fill,g_auto__c_scale,w_633.jpg") +
+          " 633w," +
+          require("../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_ar_1_1,c_fill,g_auto__c_scale,w_767.jpg") +
+          " 767w",
+        "1376px":
+          require("../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_c_scale,w_308.jpg") +
+          " 308w," +
+          require("../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_c_scale,w_991.jpg") +
+          " 991w," +
+          require("../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_c_scale,w_1376.jpg") +
+          " 1376w",
+      },
       messages: {
         title: `Wedding photographer<br/>
                 Based in seattle, WA`,

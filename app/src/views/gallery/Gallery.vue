@@ -14,7 +14,14 @@
             class="vw-gallery-list-item has-img-fit"
           >
             <a class="img-bg has-img-fit" :href="item">
-              <img :src="item" alt="" />
+              <img
+                :src="item"
+                alt=""
+                loading="lazy"
+                decoding="async"
+                width="500"
+                height="733"
+              />
             </a>
           </li>
         </ul>
