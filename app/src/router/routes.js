@@ -1,4 +1,4 @@
-import Main from "../views/Main.vue";
+import Home from "../views/Home.vue";
 import About from "../views/about/About.vue";
 import Gallery from "../views/gallery/Gallery.vue";
 import Pricing from "../views/pricing/Pricing.vue";
@@ -11,8 +11,8 @@ const routes = [
     },
     {
         path: '/',
-        name: 'main',
-        component: Main
+        name: 'home',
+        component: Home
     },
     {
         path: '/about',

@@ -1,7 +1,7 @@
 const gulp = require('gulp');
-const pug = require('gulp-pug');
-var spritesmith = require('gulp.spritesmith');
-var gulpif = require('gulp-if');
+// const pug = require('gulp-pug');
+// var spritesmith = require('gulp.spritesmith');
+// var gulpif = require('gulp-if');
 var imagemin = require('gulp-imagemin'),
     imgCompress = require('imagemin-jpeg-recompress'),
     webp = require("imagemin-webp"),
@@ -15,7 +15,7 @@ gulp.task('sprite', function () {
     }));
     return spriteData.pipe(gulpif('*.png', gulp.dest('dist/img/pages/icons/'), gulp.dest('src/scss/')));
 });
-
+//TODO set up Gulp 4
 /* minify tinypng settings */
 gulp.task('imagemin', function () {
     return gulp.src('src/img/**/*')
