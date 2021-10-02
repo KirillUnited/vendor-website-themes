@@ -2,6 +2,7 @@ import Home from "../views/Home.vue";
 import About from "../views/about/About.vue";
 import Gallery from "../views/gallery/Gallery.vue";
 import Pricing from "../views/pricing/Pricing.vue";
+import Post from "../views/post/Post.vue";
 
 const routes = [
     {
@@ -28,6 +29,11 @@ const routes = [
         path: '/pricing',
         name: 'pricing',
         component: Pricing
+    },
+    {
+        path: '/post',
+        name: 'post',
+        component: Post
     },
 ];
 

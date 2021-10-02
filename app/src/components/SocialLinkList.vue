@@ -14,7 +14,7 @@
             style="enable-background: new 0 0 310 310"
             xml:space="preserve"
           >
-            <g id="XMLID_834_">
+            <g>
               <path
                 id="XMLID_835_"
                 d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
@@ -69,8 +69,6 @@
             viewBox="0 0 512 512"
             style="enable-background: new 0 0 512 512"
             xml:space="preserve"
-            width="512"
-            height="512"
           >
             <g>
               <path
@@ -86,11 +84,44 @@
 
 <script>
 export default {
-  props: ["className"],
+  //TODO: Investigate how to add "is-fluid" class to defined items
+  props: ["className", "fluidItems"],
   data() {
     return {
       type: this.className,
+      isFluid: this.fluidItems,
+      items: [
+        { 
+          name:"fb",
+          link: "",
+          icon: ``
+        },
+        { 
+          name:"tw",
+          link: "",
+          icon: ``
+        },
+        { 
+          name:"insta",
+          link: "",
+          icon: ``
+        },
+      ]
     };
+  },
+  methods: {
+    setFluidItem(index) {
+      const item = document.querySelectorAll(".vw-social-item")[index];
+
+      item.classList.add("is-fluid");
+    },
+  },
+  mounted() {
+    const items = document.querySelectorAll(".vw-social-item");
+
+    items.forEach((el, index) => {
+      this.setFluidItem(index);
+    });
   },
 };
 </script>

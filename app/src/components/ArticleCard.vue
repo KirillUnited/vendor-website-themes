@@ -17,7 +17,7 @@ article.vw-post-card
       span.date January 25, 2018
     p.vw-post-card-desc.hidden-xs
       | {{ body }}
-    a.vw-button(href="#") read
+    a.vw-button(href="/post") read
   //- <article class="vw-post-card">
   //-   <div class="vw-post-card-img has-img-fit">
   //-     <img :src="image" alt="" />
