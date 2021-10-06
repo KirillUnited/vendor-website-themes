@@ -6,6 +6,8 @@
   "scripts": {
     "dev-nunjucks": "npm run clean && parcel src/njk/pages/common/gallery.njk src/njk/pages/theme2/index.njk --out-dir development -p 3000",
     "build-nunjucks": "rimraf ./dist && parcel build src/njk/pages/common/gallery.njk --out-dir dist --public-url ./ --no-source-maps --no-minify",
+    "dev-pug": "npm run clean && parcel src/templates/pug/views/**/*.pug --out-dir development -p 3000",
+    "build-pug": "rimraf ./dist && parcel build src/templates/pug/views/**/*.pug --out-dir dist --public-url ./ --no-source-maps --no-minify",
     "dev": "npm run clean && parcel app/public/index.html --out-dir development -p 3000",
     "build": "rimraf ./dist && parcel build app/public/index.html --out-dir dist --public-url ./ --no-source-maps",
     "clean": "rimraf development && rimraf .cache"
@@ -30,8 +32,7 @@
     "imagemin-jpeg-recompress": "^7.0.0",
     "imagemin-webp": "^6.0.0",
     "js-datepicker": "^5.18.0",
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-imagemin": "^4.0.2",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-nunjucks": "^2.2.2",
     "postcss": "^7.0.35",
     "postcss-modules": "^3.2.2",
