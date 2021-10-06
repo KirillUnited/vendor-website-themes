@@ -64,6 +64,10 @@ button.vw-button {
 }
 
 @include less-sm() {
+    .vw-wrapper {
+        padding-top: calc(#{getvw(20px)} + (3vh*2));
+    }
+
     .vw-section-header {
         padding-top: 0;
         padding-bottom: 0;
@@ -71,6 +75,7 @@ button.vw-button {
 
     .vw-hero {
         padding-bottom: getvw(25px);
+
         .vw-container {
             padding-top: 0;
             padding-bottom: Max(50px, Min(50px, #{getvw(50px)}));

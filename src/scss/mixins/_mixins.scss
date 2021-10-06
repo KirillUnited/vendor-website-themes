@@ -45,6 +45,13 @@ $sm-container-max-media: 767px;
 }
 
 // Aspect Ratio Mixin
+@mixin get-aspect-ratio() {
+    --aspect-ratio: calc(var(--height) / var(--width));
+    position: relative;
+    height: 0;
+    padding-bottom: calc(var(--aspect-ratio, .5625) * 100%);
+}
+
 @mixin aspect-ratio($width, $height) {
     position: relative;
 

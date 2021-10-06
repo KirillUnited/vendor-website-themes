@@ -1,13 +1,25 @@
 <template>
   <section class="vw-section vw-post has-bg" id="post">
     <div class="vw-container-fluid">
-      <div class="vw-post-bg has-img-fit">
-        <img src="" alt="" />
+      <div class="vw-post-bg">
+        <img
+          src="../../assets/images/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg"
+          width="1366"
+          height="790"
+          alt=""
+        />
       </div>
     </div>
     <div class="vw-section-content vw-post-content">
       <div class="vw-container vw-container-sm">
-        <h1>Live Stream My Event</h1>
+        <h1 class="vw-post-title">
+          <span v-html="title"></span>
+
+          <p class="vw-post-card-metadata">
+            <span>3 minute read</span>
+            <span class="date">January 25, 2018</span>
+          </p>
+        </h1>
 
         <SocialLinkList
           :className="[
@@ -17,11 +29,6 @@
             'hidden-xs',
           ]"
         ></SocialLinkList>
-
-        <p class="vw-post-card-metadata">
-          <span>3 minute read</span>
-          <span class="date">January 25, 2018</span>
-        </p>
 
         <p>
           I remember the exact moment I decided to start shooting wedding
@@ -43,9 +50,15 @@
           thought it would be a very cool video with slow motion.
         </p>
 
-        <img class="has-img-fit" src="" alt="" width="100%" height="399px" />
+        <img
+          class="has-img-fit"
+          src="../../assets/images/theme3/foto-pettine-Erbl6_T3YVw-unsplash (1).jpg"
+          alt=""
+          width="100%"
+          height="399px"
+        />
 
-        <h3>Reasons to live stream events</h3>
+        <h3>Additional info</h3>
 
         <p>
           We wanted to capture Tami walking towards Romeo and tap him on the
@@ -67,28 +80,12 @@
       </div>
       <div class="vw-container">
         <ul class="vw-posts-list list-style">
-          <li class="vw-posts-list-item">
-            <article class="vw-post-card">
-              <div class="vw-post-card-img has-img-fit">
-                <img src="" alt="" />
-              </div>
-              <div class="vw-post-card-content">
-                <h3 class="vw-post-card-title">
-                  Wedding Videography Packages with Love Story
-                </h3>
-                <p class="vw-post-card-metadata">
-                  <span>3 minute read</span>
-                  <span class="date">January 25, 2018</span>
-                </p>
-                <p class="vw-post-card-desc hidden-xs">
-                  Ahmed and Amina was full of excitement and a joy to film. The
-                  wedding was a two day celebration. The couple decided to make
-                  the first day of their wedding an America tradition; the
-                  second...
-                </p>
-                <a href="#" class="vw-button">read</a>
-              </div>
-            </article>
+          <li
+            v-for="article in articles"
+            :key="article.id"
+            class="vw-posts-list-item"
+          >
+            <ArticleCard v-bind:article="article"></ArticleCard>
           </li>
         </ul>
       </div>
@@ -97,11 +94,58 @@
 </template>
 
 <script>
+import ArticleCard from "../../components/ArticleCard.vue";
 import SocialLinkList from "../../components/SocialLinkList.vue";
 export default {
-  components: { SocialLinkList },
+  components: { SocialLinkList, ArticleCard },
+  data() {
+    return {
+      title: `Wedding Videography Packages with Love Story`,
+      articles: [
+        {
+          image: require("../../assets/images/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg"),
+          title: "Wedding Videography Packages with Love Story",
+          body: `Ahmed and Amina was full of excitement and a joy to film. The wedding was a two day celebration. The couple decided to make the first day of their wedding an America tradition; the second...`,
+        },
+      ],
+    };
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
+@import "../../../../src/scss/mixins/_mixins";
+.vw-post {
+  &-bg {
+    position: relative;
+    img {
+      height: 100vh;
+      margin-bottom: 0;
+    }
+  }
+  &-content {
+    padding-bottom: 8vh;
+  }
+  &-title {
+    .vw-post-card-metadata {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+  }
+  .vw-social {
+    &.is-aside {
+      top: 2rem;
+    }
+  }
+  @include less-sm() {
+    &-bg {
+      --width: 320;
+      --height: 281;
+      @include get-aspect-ratio();
+      img {
+        @include o-fit-absolute();
+      }
+    }
+  }
+}
 </style>

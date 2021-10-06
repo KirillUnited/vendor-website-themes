@@ -3,9 +3,9 @@
     <div class="vw-section-content">
       <div class="vw-container">
         <div class="vw-about-content">
-          <div v-if="images[0]" class="vw-about-img has-img-fit">
+          <div class="vw-about-img has-img-fit">
             <img
-              :src="images[0]"
+              src="../../assets/images/theme3/foto-pettine-10rbsNVwzx8-unsplash (2).jpg"
               alt=""
               loading="lazy"
               decoding="async"
@@ -67,9 +67,6 @@ export default {
 
         <p>While that friend’s wedding was the catalyst for my professional aspirations, I wasn’t exactly a “kid with a camera and a dream” when I first started. My educational background is in graphic design. I studied graphic design at the University of Nevada, Las Vegas and was taking photography classes in College of Southern Nevada.</p>`,
       },
-      images: [
-        require("../../assets/images/theme3/foto-pettine-10rbsNVwzx8-unsplash (2).jpg"),
-      ],
       infoList: [
         {
           title: "Catering options:",
