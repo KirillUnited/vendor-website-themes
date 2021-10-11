@@ -1,0 +1,24 @@
+extends ../../layouts/layout.pug
+
+block head_title 
+    title Vendor Website Theme 3
+block head
+    link(rel='preload' href='../../../../scss/vw-theme-two.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../scss/vw-theme-3.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../app.js' as='script')
+
+block content
+    - const items = views["Gallery"].items;
+
+    section#galleryModal.vw-section.vw-gallery
+        .vw-section-header
+            .vw-container
+                h1 Gallery
+        if items
+            .vw-section-content
+                .vw-container
+                    ul.vw-gallery-list.list-style(data-prop='lightgallery')
+                        each item in items
+                            li.vw-gallery-list-item.has-img-fit
+                                a.img-bg.has-img-fit(href=item)
+                                    img(src=item alt='' loading='lazy' decoding='async' width='500' height='733')

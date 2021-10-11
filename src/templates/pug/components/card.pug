@@ -1,0 +1,43 @@
+mixin articleCard(image, title, body)
+    article.vw-post-card
+        .vw-post-card-img.has-img-fit
+            img(
+                src=image,
+                alt=title,
+                loading="lazy",
+                decoding="async",
+                width="520",
+                height="502"
+            )
+        .vw-post-card-content
+            h3.vw-post-card-title
+                | #{ title }
+            p.vw-post-card-metadata
+                span 3 minute read
+                span.date January 25, 2018
+            p.vw-post-card-desc.hidden-xs
+                | #{ body }
+            a.vw-button(href="/post") read
+
+mixin reviewCard(rating, author, body)
+    article.vw-review
+        .vw-review-content
+            p.vw-review-metadata
+                span.rating.has-stars
+                    span.rating-stars(style=`--rating: ${ rating }`)
+                    span.rating-value #{ rating }
+                span.date January 25, 2018
+            p.vw-review-desc
+                | #{ body }
+            a.more(href="#") Read more
+            .vw-review-author
+                .vw-review-img.has-img-fit
+                    img(src="", alt=author)
+                h3.vw-review-title #{ author }
+        if ratingList
+            .vw-review-stats.rating.hidden-xs
+                ul.rating-list.list-style
+                    each rate in ratingList
+                        li
+                            span.rate.rating-value 5.0
+                            span #{ rate }

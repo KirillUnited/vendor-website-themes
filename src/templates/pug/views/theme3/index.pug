@@ -1,0 +1,38 @@
+extends ../../layouts/layout.pug
+
+block head_title 
+    title Vendor Website Theme 3
+block head
+    link(rel='preload' href='../../../../scss/vw-theme-two.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../scss/vw-theme-3.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../app.js' as='script')
+
+block content
+    - const articles = views["Home"].articles;
+    - const reviews = views["Home"].reviews;
+    - const ratingList = ["Responsiveness","Value","Professionalism","Reccomendation possibility"];
+
+    include ../../../html/modules/hero.html
+
+    if articles
+        section#posts.vw-section.vw-posts
+            .vw-section-header
+                .vw-container
+                    h2 Recent posts
+            .vw-section-content
+                .vw-container
+                    ul.vw-posts-list.list-style
+                        each article in articles
+                            li.vw-posts-list-item
+                                +articleCard(article.image, article.title, article.body)
+    if reviews
+        section#reviews.vw-section.vw-reviews
+            .vw-section-header
+                .vw-container
+                    h2 Reviews
+            .vw-section-content
+                .vw-container
+                    ul.vw-reviews-list.list-style
+                        each review in reviews
+                            li.vw-reviews-list-item
+                                +reviewCard(review.rating, review.author, review.body)

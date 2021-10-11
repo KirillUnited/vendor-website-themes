@@ -81,7 +81,7 @@ import About from "./about/About.vue";
 import Gallery from "./gallery/Gallery.vue";
 export default {
   components: { ArticleCard, ReviewCard, About, Gallery },
-  name: "Main",
+  name: "Home",
   data() {
     return {
       heroImage: {

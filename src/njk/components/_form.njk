@@ -4,7 +4,7 @@
         <legend class="vw-h3 vw-form-title">Get a quote</legend>
         {{ forms.input('contactname', 'Name', 'text', 'required', 'Enter your name') }}
         {{ forms.input('contactemail', 'E-mail', 'email', 'required', 'Enter your e-mail') }}
-        {{ forms.input('contactweddingdate', 'Your wedding date', 'text', required = '', errorMsg = '', 'data-prop=datapicker') }}
+        {{ forms.input('contactweddingdate', 'Your wedding date', 'text', required = '', errorMsg = '', 'data-prop=datepicker') }}
         {{ forms.textarea('contactcomment', '', 'text') }}
         <div class="vw-form-group text-right">
             <button class="vw-button" type="submit">send</button>

@@ -1,0 +1,23 @@
+<section class="vw-section vw-hero">
+    <div class="vw-section-header">
+        <div class="vw-container">
+            <h1 v-html="messages.title">
+                Wedding photographer<br />
+                Based in seattle, WA
+            </h1>
+        </div>
+    </div>
+    <div class="vw-hero-img vw-container-fluid has-img-fit">
+        <picture class="has-img-fit img-bg">
+            <source type="image/webp" media="(max-width: 767px)" sizes="(max-width: 767px) 100vw, 767px"
+                srcset="../../../../img/theme3/hero_w_767.webp 767w" />
+            <source media="(max-width: 767px)" sizes="(max-width: 767px) 100vw, 767px"
+                srcset="../../../../img/theme3/hero_w_767.jpg 767w" />
+            <source type="image/webp" sizes="(max-width: 3440px) 40vw, 1376px"
+                srcset="../../../../img/theme3/hero_w_1376.webp  1376w" />
+            <img sizes="(max-width: 3440px) 40vw, 1376px" srcset="../../../../img/theme3/hero_w_1376.jpg  1376w"
+                src="../../../../img/theme3/hero_w_1376.jpg" alt="Wedding photographer" class="has-img-holder"
+                loading="lazy" decoding="async" width="4999" height="3333" />
+        </picture>
+    </div>
+</section>

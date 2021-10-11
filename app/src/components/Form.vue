@@ -34,7 +34,7 @@
           name="contactweddingdate"
           placeholder="Your wedding date"
           autocomplete="off"
-          data-prop="datapicker"
+          data-prop="datepicker"
         />
         <span class="error-msg"></span>
       </label>
@@ -61,7 +61,7 @@ export default {
     return {};
   },
   mounted() {
-    const picker = datepicker('[data-prop="datapicker"]');
+    const picker = datepicker('[data-prop="datepicker"]');
   },
 };
 </script>

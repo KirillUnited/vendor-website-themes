@@ -13,11 +13,16 @@ window.VW = window.VW || {};
 window.VW.modal = modal;
 window.VW.header = header;
 
-window.VW.modal();
-window.VW.header();
+document.addEventListener('DOMContentLoaded', function () {
+    window.VW.modal();
+    window.VW.header();
 
-const picker = datepicker('[data-prop="datapicker"]');
-lightGallery(document.querySelector('[data-prop="lightgallery"]'), {
-    selector: 'a',
-    download: false
+    if (document.querySelector('[data-prop="datepicker"]')) {
+        const picker = datepicker('[data-prop="datepicker"]');
+    }
+
+    lightGallery(document.querySelector('[data-prop="lightgallery"]'), {
+        selector: 'a',
+        download: false
+    });
 });

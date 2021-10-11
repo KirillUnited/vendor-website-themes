@@ -1,20 +1,24 @@
+include ../components/_components.pug
+
 doctype html
-    head
-        meta(charset='UTF-8')
-        meta(name='viewport' content='width=device-width, initial-scale=1')
-        title Vendor Website Theme 3
-        meta(name='description' content='')
-        meta(name='keywords' content='')
-        meta(name='referrer' content='strict-origin')
-        link(rel='preconnect' href='https://fonts.googleapis.com')
-        link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
-        link(href='https://fonts.googleapis.com/css2?family=Lato&display=swap' rel='stylesheet')
-        link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap' rel='stylesheet')
-        link(rel='preload' href='../../../scss/vw-common.scss' as='style')
-        link(rel='stylesheet' href='../../../scss/vw-common.scss')
-        link(rel='stylesheet' href='../../../scss/vw-theme-two.scss')
-        link(rel='stylesheet' href='../../../scss/vw-theme-3.scss')
-        link(rel='preload' href='../../../app.js' as='script')
-    body
-        #app
-        script(src='../../../app.js')
+head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    block head_title
+        title Vendor Website
+    meta(name='description' content='')
+    meta(name='keywords' content='')
+    meta(name='referrer' content='strict-origin')
+    link(rel='preconnect' href='https://fonts.googleapis.com')
+    link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+    link(href='https://fonts.googleapis.com/css2?family=Lato&display=swap' rel='stylesheet')
+    link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap' rel='stylesheet')
+    link(rel='stylesheet' href='../../../../scss/vw-common.scss')
+    block head
+body
+    .vw-wrapper
+        include header.pug
+        main.vw-content
+            block content
+        include footer.pug
+    script(src='../../../../app.js')

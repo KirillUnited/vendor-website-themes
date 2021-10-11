@@ -1,0 +1,15 @@
+include form.pug
+mixin Modal()
+    #contactModal.vw-modal(tabindex='-1' data-modal='' role='dialog' hidden)
+        .vw-modal-content(role='document')
+            button.vw-modal-close(type='button' data-close='true' aria-label='Close' @click='close')
+                span(aria-hidden='true') &#x2A09;
+            h2.vw-modal-title Contact
+            p.text-truncate
+                a.text-truncate(href='tel:+425-638-3836') 425-638-3836
+            p.text-truncate
+                a.text-truncate(href='mailto:kastlehphotography@gmail.com') kastlehphotography@gmail.com
+            p.text-truncate
+                a.text-truncate(href='#') www.kastlehphotography.com
+            // {% include "./_form.njk" %}
+            +Form()

@@ -1,0 +1,17 @@
+mixin Form()
+    form#contactform.vw-form(method='POST' action='')
+        fieldset.vw-form-fieldset
+            legend.vw-h3.vw-form-title Additional info
+            label.vw-form-group(for='contactname')
+                input#contactname.vw-form-input(type='text' name='contactname' placeholder='Name' required='' autocomplete='off')
+                span.error-msg Enter your name
+            label.vw-form-group(for='contactemail')
+                input#contactemail.vw-form-input(type='email' name='contactemail' placeholder='E-mail' required='' autocomplete='off')
+                span.error-msg Enter your e-mail
+            label.vw-form-group(for='contactweddingdate')
+                input#contactweddingdate.vw-form-input(type='text' name='contactweddingdate' placeholder='Your wedding date' autocomplete='off' data-prop='datepicker')
+                span.error-msg
+            label.vw-form-group(for='contactcomment')
+                textarea#contactcomment.vw-form-input(type='text' name='contactcomment' rows='5')
+            .vw-form-group.text-right
+                button.vw-button(type='submit') send
