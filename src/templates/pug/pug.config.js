@@ -1,9 +1,9 @@
 module.exports = {
     locals: {
         headerLinks: [
-            { title: "about me", path: "./about.html", href: "#about" },
-            { title: "gallery", path: "./gallery.html", href: "#gallery" },
-            { title: "pricing", path: "./pricing.html", href: "#pricing" },
+            { title: "about me", path: "", href: "#about" },
+            { title: "gallery", path: "", href: "#gallery" },
+            { title: "pricing", path: "", href: "#pricing" },
             { title: "testimonials", path: "", href: "./#reviews" },
             { title: "blog", path: "", href: "./#posts" },
         ],
