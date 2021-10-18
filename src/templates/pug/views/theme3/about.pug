@@ -1,0 +1,36 @@
+extends ../../layouts/layout.pug
+
+block head_title 
+    title Vendor Website Theme 3
+block head
+    link(rel='preload' href='../../../../scss/vw-theme-two.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../scss/vw-theme-3.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../scss/pages/theme3/index.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
+    link(rel='preload' href='../../../../app.js' as='script')
+
+block content
+    - const messages = views["About"].messages;
+    - const infoList = views["About"].infoList;
+
+    section#about.vw-section.vw-about
+        .vw-section-content
+            .vw-container
+                .vw-about-content
+                    .vw-about-img.has-img-fit
+                        img(src='../../../../img/theme3/about.jpg' alt=messages.title loading='lazy' decoding='async' width='500' height='733')
+                    .vw-about-info
+                        .vw-about-header
+                            h1.vw-about-title #{messages.title}
+                            +social("vw-social-square is-colored", null)
+                        p.vw-post-card-metadata
+                            span Seattle, wa
+                            span Wedding photographer
+                            span in business since 2008
+                        div !{messages.description}
+                        h3 additional info
+                        each info in infoList
+                            .vw-info
+                                h4.vw-info-title #{info.title}
+                                ul.vw-info-list.list-style
+                                    each item in info.list
+                                        li.vw-info-item #{item}

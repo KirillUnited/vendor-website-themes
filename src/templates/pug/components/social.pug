@@ -1,0 +1,8 @@
+mixin social(className, itemClassName)
+    - const items = components["social"].items;
+
+    .vw-social(class=className)
+        ul.vw-social-list.list-style
+            each item, index in items
+                li.vw-social-item(class=itemClassName ? itemClassName[index] : "")
+                    a.vw-social-link(href=item.link class=item.name) !{item.icon}
