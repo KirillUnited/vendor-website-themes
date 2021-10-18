@@ -34,6 +34,7 @@
     "js-datepicker": "^5.18.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-nunjucks": "^2.2.2",
+    "parcel-plugin-prerender": "^1.4.1",
     "postcss": "^7.0.35",
     "postcss-modules": "^3.2.2",
     "pug": "^3.0.2",
