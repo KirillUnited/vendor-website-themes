@@ -6,8 +6,8 @@
   "scripts": {
     "dev-nunjucks": "npm run clean && parcel src/njk/pages/common/gallery.njk src/njk/pages/theme2/index.njk --out-dir development -p 3000",
     "build-nunjucks": "rimraf ./dist && parcel build src/njk/pages/common/gallery.njk --out-dir dist --public-url ./ --no-source-maps --no-minify",
-    "dev-pug": "npm run clean && parcel watch src/templates/pug/views/**/*.pug --out-dir development --public-url ./",
-    "build-pug": "rimraf ./dist && parcel build src/templates/pug/views/**/*.pug --out-dir dist --public-url ./ --no-source-maps --no-minify",
+    "dev-pug": "npm run clean && parcel watch src/templates/pug/views/theme3/index.pug --out-dir development --public-url ./",
+    "build-pug": "rimraf ./dist && parcel build src/templates/pug/views/theme3/index.pug --out-dir dist --public-url ./ --no-source-maps --no-minify",
     "dev": "npm run clean && parcel app/public/index.html --out-dir development -p 3000",
     "build": "rimraf ./dist && parcel build app/public/index.html --out-dir dist --public-url ./ --no-source-maps",
     "clean": "rimraf development && rimraf .cache"

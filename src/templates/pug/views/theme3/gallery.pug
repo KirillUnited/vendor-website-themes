@@ -3,9 +3,7 @@ extends ../../layouts/layout.pug
 block head_title 
     title Vendor Website Theme 3
 block head
-    link(rel='preload' href='../../../../scss/vw-theme-two.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
-    link(rel='preload' href='../../../../scss/vw-theme-3.scss' as='style' onload="this.onload=null;this.rel='stylesheet'")
-    link(rel='preload' href='../../../../app.js' as='script')
+    include ../theme3/includes/head.pug
 
 block content
     - const items = views["Gallery"].items;

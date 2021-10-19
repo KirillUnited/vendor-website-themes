@@ -14,7 +14,10 @@ head
     link(href='https://fonts.googleapis.com/css2?family=Lato&display=swap' rel='stylesheet')
     link(href='https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap' rel='stylesheet')
     link(rel='stylesheet' href='../../../../scss/vw-common.scss')
+    
     block head
+    
+    link(rel='preload' href='../../../../app.js' as='script')
 body
     .vw-wrapper
         include header.pug
