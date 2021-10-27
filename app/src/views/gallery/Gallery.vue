@@ -41,9 +41,9 @@ export default {
         title: `Gallery`,
       },
       items: [
-        require("../../assets/images/theme3/foto-pettine-3IA9da9Ohx0-unsplash (3).jpg"),
-        require("../../assets/images/theme3/foto-pettine-IfjHaIoAoqE-unsplash (3).jpg"),
-        require("../../assets/images/theme3/foto-pettine-nkeeRGy_CrI-unsplash (1).jpg"),
+        require("../../assets/images/theme3/gallery1.jpg"),
+        require("../../assets/images/theme3/gallery2.jpg"),
+        require("../../assets/images/theme3/gallery3.jpg"),
       ],
     };
   },

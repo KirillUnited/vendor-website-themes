@@ -3,9 +3,7 @@
     <div class="vw-container-fluid">
       <div class="vw-post-bg">
         <img
-          src="../../assets/images/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg"
-          width="1366"
-          height="790"
+          src="../../assets/images/theme3/article.jpg"
           alt=""
         />
       </div>
@@ -54,8 +52,6 @@
           class="has-img-fit"
           src="../../assets/images/theme3/foto-pettine-Erbl6_T3YVw-unsplash (1).jpg"
           alt=""
-          width="100%"
-          height="399px"
         />
 
         <h3>Additional info</h3>
@@ -103,7 +99,7 @@ export default {
       title: `Wedding Videography Packages with Love Story`,
       articles: [
         {
-          image: require("../../assets/images/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg"),
+          image: require("../../assets/images/theme3/blog1.jpg"),
           title: "Wedding Videography Packages with Love Story",
           body: `Ahmed and Amina was full of excitement and a joy to film. The wedding was a two day celebration. The couple decided to make the first day of their wedding an America tradition; the second...`,
         },

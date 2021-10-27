@@ -5,7 +5,7 @@
         <div class="vw-about-content">
           <div class="vw-about-img has-img-fit">
             <img
-              src="../../assets/images/theme3/foto-pettine-10rbsNVwzx8-unsplash (2).jpg"
+              src="../../assets/images/theme3/about.jpg"
               alt=""
               loading="lazy"
               decoding="async"

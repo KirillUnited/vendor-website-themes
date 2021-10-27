@@ -1,5 +1,6 @@
 // /* ------ Libraries ------ */
 import datepicker from 'js-datepicker';
+import 'js-datepicker/src/datepicker';
 import 'lightgallery.js';
 import 'lightgallery.js/dist/css/lightgallery.css';
 

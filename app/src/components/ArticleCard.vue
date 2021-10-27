@@ -6,8 +6,6 @@ article.vw-post-card
       :alt="title",
       loading="lazy",
       decoding="async",
-      width="520",
-      height="502"
     )
   .vw-post-card-content
     h3.vw-post-card-title

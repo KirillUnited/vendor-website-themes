@@ -64,10 +64,6 @@ button.vw-button {
 }
 
 @include less-sm() {
-    .vw-wrapper {
-        padding-top: calc(#{getvw(20px)} + (3vh*2));
-    }
-
     .vw-section-header {
         padding-top: 0;
         padding-bottom: 0;

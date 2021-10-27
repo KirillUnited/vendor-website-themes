@@ -1,5 +1,0 @@
-{
-  "prerender": {
-    "routes": ["/", "/about", "/gallery"]
-  }
-}

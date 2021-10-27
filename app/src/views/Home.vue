@@ -8,24 +8,15 @@
       </div>
       <div class="vw-hero-img vw-container-fluid has-img-fit">
         <picture class="has-img-fit img-bg">
-          <source
-            media="(max-width: 767px)"
-            sizes="(max-width: 767px) 100vw, 767px"
-            :srcset="heroImage['767px']"
-          />
-          <img
-            sizes="(max-width: 3440px) 40vw, 1376px"
-            :srcset="heroImage['1376px']"
-            :src="
-              require('../assets/images/theme3/hero/foto-pettine-PVMw6stOVo0-unsplash_3_qlwru7_c_scale,w_1376.jpg')
-            "
-            :alt="messages.title"
-            class="has-img-holder"
-            loading="lazy"
-            decoding="async"
-            width="4999"
-            height="3333"
-          />
+          <source type="image/webp" media="(max-width: 767px)" sizes="(max-width: 767px) 100vw, 767px"
+                srcset="../assets/images/theme3/hero_w_767.webp 767w" />
+            <source media="(max-width: 767px)" sizes="(max-width: 767px) 100vw, 767px"
+                srcset="../assets/images/theme3/hero_w_767.jpg 767w" />
+            <source type="image/webp" sizes="(max-width: 3440px) 40vw, 1376px"
+                srcset="../assets/images/theme3/hero_w_1376.webp  1376w" />
+            <img sizes="(max-width: 3440px) 40vw, 1376px" srcset="../assets/images/theme3/hero_w_1376.jpg  1376w"
+                src="../assets/images/theme3/hero_w_1376.jpg" alt="Wedding photographer" class="has-img-holder"
+                loading="lazy" decoding="async" width="4999" height="3333" />
         </picture>
       </div>
     </section>
@@ -108,12 +99,12 @@ export default {
       },
       articles: [
         {
-          image: require("../assets/images/theme3/foto-pettine-7kfulL-IQgU-unsplash.jpg"),
+          image: require("../assets/images/theme3/blog1.jpg"),
           title: "Wedding Videography Packages",
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow. As you use your imagination to configure your wedding day, you are thinking about what wedding songs you will walk down the aisle to while...`,
         },
         {
-          image: require("../assets/images/theme3/foto-pettine-7iC9GVU_I00-unsplash (1).jpg"),
+          image: require("../assets/images/theme3/blog2.jpg"),
           title: "Wedding Videography: Romeo and Tami’s Wedding Reel",
           body: `You are planning for one of the most memorable days of your life. You have everything in place in your mind regarding how your wedding day will flow...`,
         },
