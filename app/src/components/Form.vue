@@ -56,6 +56,7 @@
 
 <script>
 import datepicker from "js-datepicker";
+import 'js-datepicker/src/datepicker.scss';
 export default {
   data() {
     return {};

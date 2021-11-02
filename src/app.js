@@ -18,12 +18,14 @@ document.addEventListener('DOMContentLoaded', function () {
     window.VW.modal();
     window.VW.header();
 
-    if (document.querySelector('[data-prop="datepicker"]')) {
+    if (typeof datepicker === "function" && document.querySelector('[data-prop="datepicker"]')) {
         const picker = datepicker('[data-prop="datepicker"]');
     }
 
-    lightGallery(document.querySelector('[data-prop="lightgallery"]'), {
-        selector: 'a',
-        download: false
-    });
+    if (typeof lightGallery === "function" && document.querySelector('[data-prop="lightgallery"]')) {
+        lightGallery(document.querySelector('[data-prop="lightgallery"]'), {
+            selector: 'a',
+            download: false
+        });
+    }
 });
